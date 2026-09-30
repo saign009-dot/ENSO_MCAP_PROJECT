@@ -3,4 +3,5 @@ numpy
 xarray
 tqdm
 matplotlib
-NetCDF4 
+NetCDF4
+Path
