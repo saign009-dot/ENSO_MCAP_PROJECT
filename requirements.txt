@@ -4,5 +4,5 @@ xarray
 tqdm
 matplotlib
 NetCDF4
-Path
+pathlib
 ipykernel
