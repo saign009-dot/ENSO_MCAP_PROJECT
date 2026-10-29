@@ -3,3 +3,6 @@ ENSO.venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+station_data/
+indicies_data/first_pass/enso_historical_indicies.csv
+outputs/
