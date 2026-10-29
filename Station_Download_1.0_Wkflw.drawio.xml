@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram name="Page-1" id="PKpB6A2LshsjVRmyTN-3">
+    <mxGraphModel dx="4370" dy="3009" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-2" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Vertical Container" vertex="1">
+          <mxGeometry height="221" width="260" x="441" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-3" parent="YBhsTPMUBiwthjwb7pRI-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="This pipeline collects daily observations and quality flags for selected stations and saved outputs as a csv.&amp;nbsp;&lt;div&gt;The scope is NOT just Minnesota there are stations samples outside of MN boundary. &lt;u&gt;This needs to be fixed in notebook descriptions&lt;/u&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="136" width="190" x="35" y="42.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-3" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-6" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontSize=11;" value="&lt;b&gt;1&lt;/b&gt; &amp;nbsp; Imports dependencies from requirements.txt" vertex="1">
+          <mxGeometry height="80" width="120" x="911" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-4" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-33" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-7" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontSize=11;" value="&lt;b&gt;2&lt;/b&gt; &amp;nbsp; inits &lt;b&gt;data_dir&lt;/b&gt; ../station_data/ghcnd" vertex="1">
+          <mxGeometry height="80" width="120" x="1100" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-12" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;dashed=1;" value="old setup:&lt;br&gt;&lt;b&gt;output_nc&lt;/b&gt;&lt;br&gt;Removed from the planned CSV-only path" vertex="1">
+          <mxGeometry height="90" width="170" x="1350" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-6" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-33" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;3&lt;/b&gt; &amp;nbsp; inits a list of &lt;b&gt;first_order_stations&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="1570" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-51" parent="1" style="shape=wedgeCallout;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="Chanhassen and little fork need to be spliced in. I think step one of that is making a list of donor_stations" vertex="1">
+          <mxGeometry height="80" width="124" x="1639" y="81" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-49" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;note: assumes execution from 'scripts'&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="1140" y="118.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-39" collapsed="1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="USW000149{id} name" vertex="1">
+          <mxGeometry height="30" width="159" x="1550.5" y="276.5" as="geometry">
+            <mxRectangle height="300" width="150.5" x="1550.5" y="276.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-40" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="{26} St. Cloud" vertex="1">
+          <mxGeometry height="30" width="150.5" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-41" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="{22} MSP" vertex="1">
+          <mxGeometry height="30" width="150.5" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-42" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=1;" value="{18} Intl Falls" vertex="1">
+          <mxGeometry height="30" width="150.5" y="90" as="geometry">
+            <mxRectangle height="26" width="140" y="90" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-43" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=1;" value="{13} Duluth" vertex="1">
+          <mxGeometry height="30" width="150.5" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-44" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=1;" value="{25} Rochester" vertex="1">
+          <mxGeometry height="30" width="150.5" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-45" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=1;" value="{16} Grand Forks" vertex="1">
+          <mxGeometry height="30" width="150.5" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-46" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=1;" value="{44} Sioux Falls" vertex="1">
+          <mxGeometry height="30" width="150.5" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-47" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=1;" value="{14} Fargo" vertex="1">
+          <mxGeometry height="30" width="150.5" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-48" parent="YBhsTPMUBiwthjwb7pRI-39" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=1;" value="{20} La Crosse" vertex="1">
+          <mxGeometry height="30" width="150.5" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-50" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;note: .nc format abandoned for csv&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="1391" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-57" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="minor note" vertex="1">
+          <mxGeometry height="80" width="120" x="269" y="-153" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-58" parent="1" style="shape=wedgeCallout;whiteSpace=wrap;html=1;" value="major note" vertex="1">
+          <mxGeometry height="80" width="120" x="441" y="-259" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-59" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="general process" vertex="1">
+          <mxGeometry height="80" width="120" x="269" y="-250" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-60" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="calculation" vertex="1">
+          <mxGeometry height="80" width="120" x="264" y="-53" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="anything &lt;u&gt;underlined&lt;/u&gt;&amp;nbsp;or&amp;nbsp; yellow needs revision or further thought check log if unclear" vertex="1">
+          <mxGeometry height="100" width="159" x="411" y="-153" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-62" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="forms a list of &lt;b&gt;donor_stations&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="1730" y="-224" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-63" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Variables are in &lt;b&gt;bold&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="97" x="446" y="-47" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-64" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="USC0021{id} name" vertex="1">
+          <mxGeometry height="90" width="140" x="1720" y="-144" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-65" parent="YBhsTPMUBiwthjwb7pRI-64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="{1448} Chanhassen" vertex="1">
+          <mxGeometry height="30" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-66" parent="YBhsTPMUBiwthjwb7pRI-64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="{4809} Littlefork" vertex="1">
+          <mxGeometry height="30" width="140" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-7" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-85">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-70" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;4&lt;/b&gt; &amp;nbsp; inits a list of &lt;b&gt;target_vars&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="1803" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-71" collapsed="1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="GHCNd Var, description(unit)" vertex="1">
+          <mxGeometry height="30" width="248" x="1739" y="278.5" as="geometry">
+            <mxRectangle height="360" width="298" x="1739" y="278.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-72" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="TMAX, max daily temp(C*10)" vertex="1">
+          <mxGeometry height="30" width="298" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-73" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="TMIN, min daily temp(C*10)" vertex="1">
+          <mxGeometry height="30" width="298" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-74" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="PRCP, daily precip (mm*10)" vertex="1">
+          <mxGeometry height="30" width="298" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-75" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="MDPR, multi-day precip total (mm*10)" vertex="1">
+          <mxGeometry height="30" width="298" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-76" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="DAPR, duration of MDPR (days)" vertex="1">
+          <mxGeometry height="30" width="298" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-77" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="SNOW, new snow on fresh board(mm)" vertex="1">
+          <mxGeometry height="30" width="298" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-78" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="MDSF, multi-day snowfall total(mm)" vertex="1">
+          <mxGeometry height="30" width="298" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-79" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="DASF, duration of MDSF(days)" vertex="1">
+          <mxGeometry height="30" width="298" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-80" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="SNWD, snow depth(mm)" vertex="1">
+          <mxGeometry height="30" width="298" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-81" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="WESF, water equivalent of snowfall((mm*10)" vertex="1">
+          <mxGeometry height="30" width="298" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-83" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=#B09500;fillColor=#e3c800;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontColor=#000000;" value="WESD, water equivalent of snow on ground (mm*10)" vertex="1">
+          <mxGeometry height="30" width="298" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-82" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="Daily resolution&lt;div&gt;GHCNd avoids&amp;nbsp; floats by storing 10ths as intvals 15.6C is 156&lt;/div&gt;" vertex="1">
+          <mxGeometry height="96.5" width="120" x="1844" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-8" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-85" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;5&lt;/b&gt; &amp;nbsp; defines units &amp;amp; conversion factor&amp;nbsp; &amp;nbsp; &amp;nbsp;-&amp;gt;unit=intval*0.1" vertex="1">
+          <mxGeometry height="80" width="120" x="2025" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-86" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="output metadata incorrectly says DAVARs are in mm should be days" vertex="1">
+          <mxGeometry height="90" width="131" x="2054" y="108.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-9" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-98">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-87" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;6&lt;/b&gt; &amp;nbsp; &lt;font style=&quot;font-size: 11px;&quot;&gt;Creates a separate list of variables from &lt;b&gt;target_vars &lt;/b&gt;to store q flag T/F condition&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85.5" width="120" x="2227" y="195.75" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-96" parent="1" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="ex: SNOW-&amp;gt;SNOW_q" vertex="1">
+          <mxGeometry height="30" width="140" x="2217" y="281.25" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-10" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-112">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-11" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-98" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;7&lt;/b&gt; &amp;nbsp; inits &lt;b&gt;target_dates, &lt;/b&gt;a daily calendar 1890-present&amp;nbsp;" vertex="1">
+          <mxGeometry height="80" width="120" x="2422" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-103" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="making this calendar does not automatically populate it with fresh data" vertex="1">
+          <mxGeometry height="96.5" width="131" x="2416.5" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-104" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="downstream of this will trim to 1950" vertex="1">
+          <mxGeometry height="80" width="120" x="2404" y="19.25" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-12" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-112" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;8&lt;/b&gt; &amp;nbsp; calculates data dim for array and intits result&lt;div&gt;&lt;b&gt;n_days&lt;/b&gt;=len(&lt;b style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;target_dates&lt;/b&gt;&lt;span style=&quot;text-decoration-line: inherit; background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="242" x="2607" y="118.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-13" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-113" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;9&lt;/b&gt; &amp;nbsp; calculates data dim for array and inits result&lt;div&gt;&lt;b&gt;n_stations&lt;/b&gt;=len(&lt;b style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;first_order_stations&lt;/b&gt;&lt;span style=&quot;text-decoration-line: inherit; background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="242" x="2607" y="275.75" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-14" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-118" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-15" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-119" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-16" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-120" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-116" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;10&lt;/b&gt; &amp;nbsp; inits empty matrices&amp;nbsp;using dim calc result" vertex="1">
+          <mxGeometry height="80" width="120" x="2956" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-117" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="data structure&amp;gt;=2D" vertex="1">
+          <mxGeometry height="104" width="82" x="636" y="-217" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-118" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;b&gt;data_matrices&lt;/b&gt;&lt;div&gt;&lt;b&gt;(empty)&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="93" x="2969.5" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-119" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;b&gt;qc_matrices&lt;/b&gt;&lt;div&gt;&lt;b&gt;(empty)&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="93" x="2969.5" y="326" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-17" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-120" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-200" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-120" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;11&lt;/b&gt; &amp;nbsp; inits empty station metadata lists" vertex="1">
+          <mxGeometry height="80" width="120" x="3144" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-125" collapsed="1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="1D data structure" vertex="1">
+          <mxGeometry height="30" width="127" x="613" y="-103" as="geometry">
+            <mxRectangle height="120" width="140" x="690" y="-127" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-126" parent="YBhsTPMUBiwthjwb7pRI-125" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="Item 1" vertex="1">
+          <mxGeometry height="30" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-127" parent="YBhsTPMUBiwthjwb7pRI-125" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="Item 2" vertex="1">
+          <mxGeometry height="30" width="140" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-128" parent="YBhsTPMUBiwthjwb7pRI-125" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="Item 3" vertex="1">
+          <mxGeometry height="30" width="140" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-129" collapsed="1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="4 empty lists" vertex="1">
+          <mxGeometry height="30" width="102" x="3153" y="278.5" as="geometry">
+            <mxRectangle height="150" width="140" x="3134" y="278.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-130" parent="YBhsTPMUBiwthjwb7pRI-129" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;station_ids&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-131" parent="YBhsTPMUBiwthjwb7pRI-129" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;lats&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="140" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-132" parent="YBhsTPMUBiwthjwb7pRI-129" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;lons&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="140" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-133" parent="YBhsTPMUBiwthjwb7pRI-129" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;station_names&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="140" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-134" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="need to make sure to keep metadata and array rows aligned even when station cannot be loaded" vertex="1">
+          <mxGeometry height="106.5" width="120" x="3184" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-137" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="These arrays allow for an unfufilled observation, nan with a false quality flag, meaning the obs is not discarded later when filtered by quality flag.&lt;div&gt;These arrays also reserve space for all 9 stations. If a download fails and the station is skipped the later metedata lists can have fewer entires than the arrays (because dim calc)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="187" width="187" x="2922.5" y="-148" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-18" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-140" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-139" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;13&lt;/b&gt; &amp;nbsp; Select next&lt;br&gt;&lt;b&gt;i, station_id&lt;/b&gt;&lt;br&gt;from &lt;b&gt;first_order_stations&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="3482" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-19" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-140" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-141" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-140" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;14&lt;/b&gt; &amp;nbsp; inits local input cache location&lt;div&gt;&amp;nbsp;&lt;b&gt;local_path &lt;/b&gt;= &lt;b&gt;data_dir/&lt;/b&gt;f{full id}.csv&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84.5" width="120" x="3687" y="196.25" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-22" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-141" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-144" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-141" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;15&lt;/b&gt; &amp;nbsp; inits&amp;nbsp; remote source&lt;div&gt;&lt;b&gt;url&lt;/b&gt;=f'link/{fullid}.csv'&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="3874" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-21" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-142" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-141" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-142" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="GHCNd data source" vertex="1">
+          <mxGeometry height="93" width="68" x="3900" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-26" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-144" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-146">
+          <mxGeometry relative="1" x="0.0037" as="geometry">
+            <Array as="points">
+              <mxPoint x="4337.5" y="265.8" />
+              <mxPoint x="4337.5" y="399" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-27" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-144" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-145">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4341.6" y="205.8" />
+              <mxPoint x="4341.6" y="111" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-144" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&lt;b&gt;16&lt;/b&gt; &amp;nbsp; Does the cached station csv exist?" vertex="1">
+          <mxGeometry height="60" width="120" x="4195" y="208.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-156" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-145" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-147">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-145" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="yes" vertex="1">
+          <mxGeometry height="80" width="80" x="4396" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-154" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-146" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-159">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="4346" y="318.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-146" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="no" vertex="1">
+          <mxGeometry height="80" width="80" x="4396" y="359" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-32" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-147" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-160" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-147" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;17&lt;/b&gt; &amp;nbsp; Read cached CSV&lt;br&gt;into &lt;b&gt;df&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="5152" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-148" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this decision needs an explicit refresh option/check" vertex="1">
+          <mxGeometry height="80" width="120" x="4200" y="125.75" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-149" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="descision" vertex="1">
+          <mxGeometry height="60" width="120" x="796" y="-224" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-151" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this could be as simple as deleting old data before each run" vertex="1">
+          <mxGeometry height="80" width="120" x="4195" y="45.75" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-158" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this read is outside the coded exception handler meaning an unreadbale or malformed cached file can stop execution but I dont think this is an issue because it executes properly" vertex="1">
+          <mxGeometry height="177" width="130" x="4583" y="-106" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-185" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-159" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-162" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-159" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;18&lt;/b&gt; &amp;nbsp; Download into &lt;b&gt;df&lt;/b&gt;&lt;br&gt;and save CSV to&lt;br&gt;&lt;b&gt;local_path&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="4562" y="359" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-33" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-160" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-172">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-160" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;21&lt;/b&gt; &amp;nbsp; Extract from first row of &lt;b&gt;df&lt;/b&gt;:&lt;br&gt;&lt;b&gt;lat, lon, name&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="180" x="5390" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-161" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="skipping a stationleaves it preaoocated array row in place which can cause dimension mismatch" vertex="1">
+          <mxGeometry height="131" width="120" x="4947" y="477" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-188" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-162" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="YBhsTPMUBiwthjwb7pRI-160" value="Yes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4837" y="190" />
+              <mxPoint x="5450" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-28" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-162" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-163" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-162" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&lt;b&gt;19&lt;/b&gt; &amp;nbsp; does the atempted data download work?" vertex="1">
+          <mxGeometry height="60" width="120" x="4777" y="257" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-29" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-163" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-164" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-163" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="no" vertex="1">
+          <mxGeometry height="80" width="80" x="4967" y="247" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-164" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;20&lt;/b&gt; &amp;nbsp; prints error message and advance to the next station" vertex="1">
+          <mxGeometry height="80" width="120" x="4947" y="397" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-169" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="Need to chose a consistent failure handling rule" vertex="1">
+          <mxGeometry height="80" width="80" x="4496" y="231" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-170" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="empty file or missing metedata can fail here but i dont think that is happening" vertex="1">
+          <mxGeometry height="97" width="130" x="5165" y="-26" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-171" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="you can be sure by validating the dataframes rows and required columns before accessing the first row" vertex="1">
+          <mxGeometry height="121" width="125" x="5165" y="-147" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-34" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-172" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-174" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-172" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;22&lt;/b&gt; &amp;nbsp; Parse &lt;b&gt;df[DATE]&lt;/b&gt;&lt;br&gt;as datetime;&lt;br&gt;invalid values become NaT" vertex="1">
+          <mxGeometry height="80" width="160" x="5641" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-173" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="should count and report invalid dates" vertex="1">
+          <mxGeometry height="80" width="120" x="5655" y="-9" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-174" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;23&lt;/b&gt; &amp;nbsp; drops rows with invalid dates" vertex="1">
+          <mxGeometry height="80" width="160" x="5865" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-175" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="double check that these dates are actually unusable and not just formated weird" vertex="1">
+          <mxGeometry height="84.5" width="130" x="5885" y="-13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-35" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-176" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-178" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-176" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;24&lt;/b&gt; &amp;nbsp; removes duplicate dates" vertex="1">
+          <mxGeometry height="80" width="120" x="6065" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-177" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="should distinguish identical duplicates BUT i think ghcnd does this before i get to it" vertex="1">
+          <mxGeometry height="106" width="125" x="6100" y="-35" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-36" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-178" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-207" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-178" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;25&lt;/b&gt; &amp;nbsp; Build &lt;b&gt;df_reindexed&lt;/b&gt;&lt;br&gt;by aligning &lt;b&gt;df&lt;/b&gt;&lt;br&gt;to &lt;b&gt;target_dates&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="180" x="6280" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-179" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="report source record coverage by variable" vertex="1">
+          <mxGeometry height="80" width="120" x="6309" y="-9" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-181" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="DATE becomes the df index and reindexes to the calendar" vertex="1">
+          <mxGeometry height="80" width="120" x="6339" y="-89" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-24" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-200" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-139" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-200" parent="1" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;" value="&lt;b&gt;12&lt;/b&gt; &amp;nbsp; Outer station&lt;br&gt;loop" vertex="1">
+          <mxGeometry height="80" width="90" x="3362" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-37" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-207" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-208" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-207" parent="1" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;" value="&lt;b&gt;26&lt;/b&gt; &amp;nbsp; Select next&lt;br&gt;&lt;b&gt;var&lt;/b&gt;&lt;br&gt;from &lt;b&gt;target_vars&lt;/b&gt;" vertex="1">
+          <mxGeometry height="88" width="115" x="6465" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-247" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-208" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="YBhsTPMUBiwthjwb7pRI-210" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-38" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-208" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-209">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-208" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&lt;b&gt;27&lt;/b&gt; &amp;nbsp; Is variable present in the station dataframe" vertex="1">
+          <mxGeometry height="60" width="120" x="6623" y="81" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-40" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-209" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-213" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-209" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="yes" vertex="1">
+          <mxGeometry height="80" width="80" x="6812" y="-17.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-39" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-210" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-211" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-210" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="no" vertex="1">
+          <mxGeometry height="80" width="80" x="6826" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-211" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;28&lt;/b&gt; &amp;nbsp; Variable absent:&lt;br&gt;leave allocated values&lt;br&gt;&lt;b&gt;NaN&lt;/b&gt; and masks &lt;b&gt;False&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="175" x="6985" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-212" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="report variables absent from source and variables present but missing obs" vertex="1">
+          <mxGeometry height="91" width="125" x="7010" y="222" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-41" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-213" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="YBhsTPMUBiwthjwb7pRI-214" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-213" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;29&lt;/b&gt; &amp;nbsp; Read &lt;b&gt;df_reindexed[var]&lt;/b&gt;&lt;br&gt;for the current station" vertex="1">
+          <mxGeometry height="80" width="160" x="6999" y="-17.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-48" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-214" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-216">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-214" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;30&lt;/b&gt; &amp;nbsp; Create numeric &lt;b&gt;vals&lt;/b&gt;&lt;br&gt;with nonnumeric entries&lt;br&gt;coerced to NaN" vertex="1">
+          <mxGeometry height="80" width="170" x="7182" y="-17.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-215" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="report unexpected nonumeric entires to nan" vertex="1">
+          <mxGeometry height="80" width="120" x="7207" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-44" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-216" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-218">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-45" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-216" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-217">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-216" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&lt;b&gt;31&lt;/b&gt; &amp;nbsp; Does &lt;b&gt;attr_col&lt;/b&gt;&lt;br&gt;(&lt;b&gt;var + _ATTRIBUTES&lt;/b&gt;)&lt;br&gt;exist?" vertex="1">
+          <mxGeometry height="60" width="170" x="7397" y="-7.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-50" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-217" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-219">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-217" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="yes" vertex="1">
+          <mxGeometry height="80" width="80" x="7615" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-60" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-218" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-231">
+          <mxGeometry relative="1" x="0.6056" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-218" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="no" vertex="1">
+          <mxGeometry height="80" width="80" x="7615" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-51" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-219" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-224" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-219" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;32&lt;/b&gt; &amp;nbsp; Split &lt;b&gt;attr_col&lt;/b&gt;&lt;br&gt;into &lt;b&gt;attrs&lt;/b&gt;:&lt;br&gt;mflag, qflag, source, time" vertex="1">
+          <mxGeometry height="80" width="180" x="7796" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-220" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;base=19;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="apparently it breaks here and does not initialize qflag?" vertex="1">
+          <mxGeometry height="80" width="120" x="6786" y="-216" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-221" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="note this ignores obs time and sflag" vertex="1">
+          <mxGeometry height="80" width="120" x="7818" y="-177.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-222" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="might want to have it not ignore those" vertex="1">
+          <mxGeometry height="80" width="120" x="7860" y="-258" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-52" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-224" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-225" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-224" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;33&lt;/b&gt; &amp;nbsp; Extract &lt;b&gt;mflag&lt;/b&gt;&lt;br&gt;from &lt;b&gt;attrs[0]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="8002" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-53" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-225" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-227" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-225" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;34&lt;/b&gt; &amp;nbsp; Set &lt;b&gt;is_trace = mflag == T&lt;/b&gt;&lt;br&gt;then &lt;b&gt;vals[is_trace] = 0&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="170" x="8183" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-226" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="maybe want to record a count of trace obs occurance" vertex="1">
+          <mxGeometry height="80" width="120" x="8207" y="-257.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-54" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-227" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-231" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-227" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;35&lt;/b&gt; &amp;nbsp; Extract &lt;b&gt;qflag&lt;/b&gt; from &lt;b&gt;attrs[1]&lt;/b&gt;&lt;br&gt;or use an all-missing Series&lt;br&gt;if that component is absent" vertex="1">
+          <mxGeometry height="80" width="180" x="8373" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-228" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="verify missing/malformed data follows documented quality policy" vertex="1">
+          <mxGeometry height="99" width="138" x="8393" y="-197" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-229" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="i think this was suppposed to say&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;div&gt;T-&amp;gt;0 should be 0*&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="8198" y="-177.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-55" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-231" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-232" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-231" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;36&lt;/b&gt; &amp;nbsp; In &lt;b&gt;vals&lt;/b&gt;:&lt;br&gt;replace -9999 with NaN" vertex="1">
+          <mxGeometry height="80" width="155" x="8569" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-56" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-232" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="review-store-observations" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-232" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;37&lt;/b&gt; &amp;nbsp; Create &lt;b&gt;vals_converted&lt;/b&gt;&lt;br&gt;using &lt;b&gt;var_conv[var]&lt;/b&gt;&lt;br&gt;and cast to float32" vertex="1">
+          <mxGeometry height="80" width="180" x="8764" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-233" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="verify conversion happens once and output looks good" vertex="1">
+          <mxGeometry height="80" width="120" x="8811" y="-257.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-234" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="this uses unit specific conversion factors defined near start" vertex="1">
+          <mxGeometry height="80" width="120" x="8778" y="-178" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-57" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-235" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-239" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-235" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;39&lt;/b&gt; &amp;nbsp; &lt;b&gt;bad_q = qflag.notna()&lt;/b&gt;&lt;br&gt;Store in&lt;br&gt;&lt;b&gt;qc_matrices[var][i, :]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="9250" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-236" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="true means flag present" vertex="1">
+          <mxGeometry height="80" width="120" x="9266" y="-178" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-237" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="A boolean mask loses the identity of the qflag code. Maybe dont do that" vertex="1">
+          <mxGeometry height="90" width="125" x="9297" y="-268" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-238" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this is where the unititlaized or stale qflag issue could cause more issues" vertex="1">
+          <mxGeometry height="99" width="125" x="9315" y="-367" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-245" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-239" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;exitX=1;exitY=0;exitDx=0;exitDy=0;" target="YBhsTPMUBiwthjwb7pRI-240" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-59" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-239" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-241">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-239" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&lt;b&gt;40&lt;/b&gt; &amp;nbsp; Is there another target variable for this station?" vertex="1">
+          <mxGeometry height="70" width="134" x="9460" y="-92.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-249" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-240" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-246" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-240" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="No" vertex="1">
+          <mxGeometry height="80" width="80" x="9649" y="-239" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-242" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-241" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="YBhsTPMUBiwthjwb7pRI-207" value="Next variable">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="9689" y="400" />
+              <mxPoint x="6522.5" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-241" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="yes" vertex="1">
+          <mxGeometry height="80" width="80" x="9649" y="64" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-64" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-246" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-255" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-246" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;41&lt;/b&gt; &amp;nbsp; finish with this station" vertex="1">
+          <mxGeometry height="80" width="120" x="9820" y="-239" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-65" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-255" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-262" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-255" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;42&lt;/b&gt; &amp;nbsp; Append one station to:&lt;br&gt;&lt;b&gt;station_ids, lats,&lt;br&gt;lons, station_names&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="180" x="9998" y="-239" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-256" collapsed="1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="4 growing lists" vertex="1">
+          <mxGeometry height="30" width="102" x="10011" y="-159" as="geometry">
+            <mxRectangle height="150" width="140" x="3134" y="278.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-257" parent="YBhsTPMUBiwthjwb7pRI-256" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;station_ids&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-258" parent="YBhsTPMUBiwthjwb7pRI-256" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;lats&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="140" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-259" parent="YBhsTPMUBiwthjwb7pRI-256" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;lons&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="140" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-260" parent="YBhsTPMUBiwthjwb7pRI-256" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;station_names&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="140" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-261" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="note: these entries must correspond exactly to observation and quality array rows" vertex="1">
+          <mxGeometry height="90" width="125" x="10026" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-66" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-262" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-263">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-67" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-262" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-264">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-262" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&lt;b&gt;43&lt;/b&gt; &amp;nbsp; is there another station to process?" vertex="1">
+          <mxGeometry height="60" width="120" x="10211" y="-229" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-70" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-263" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-268">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-263" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="no" vertex="1">
+          <mxGeometry height="80" width="80" x="10371" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-69" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-264" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="YBhsTPMUBiwthjwb7pRI-200" value="Next station">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="10411" y="800" />
+              <mxPoint x="3407" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-264" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="yes" vertex="1">
+          <mxGeometry height="80" width="80" x="10371" y="-86" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-71" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-268" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="review-build-dataset" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-268" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;44&lt;/b&gt; &amp;nbsp; Build &lt;b&gt;data_vars&lt;/b&gt;:&lt;br&gt;11 observation arrays +&lt;br&gt;11 quality arrays;&lt;br&gt;dims = (station, time)" vertex="1">
+          <mxGeometry height="80" width="190" x="10574" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-72" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-269" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-273">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-269" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;46&lt;/b&gt; &amp;nbsp; Create &lt;b&gt;winter_year&lt;/b&gt;&lt;br&gt;and attach to &lt;b&gt;ds&lt;/b&gt;:&lt;br&gt;Jan-Jun = same year;&lt;br&gt;Jul-Dec = next year" vertex="1">
+          <mxGeometry height="80" width="180" x="11077" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-271" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="July2025-June2026 are labelled 2026" vertex="1">
+          <mxGeometry height="80" width="120" x="11102" y="-409" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-272" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;base=21;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="introduce explicit season and season&amp;nbsp; fields&amp;nbsp;" vertex="1">
+          <mxGeometry height="80" width="120" x="11121" y="-489" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-73" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-273" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-275" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-273" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;47&lt;/b&gt; &amp;nbsp; Attach descriptions and units&lt;br&gt;to &lt;b&gt;ds[var].attrs&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="165" x="11272" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-274" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="verify units and descriptions and missing val info also fix the DA vars unit to be days" vertex="1">
+          <mxGeometry height="105" width="151" x="11269" y="-434" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-74" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-275" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-277" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-275" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;48&lt;/b&gt; &amp;nbsp; Attach quality-mask meaning&lt;br&gt;to &lt;b&gt;ds[var_q].attrs&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="170" x="11459" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-276" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="make sure this policy is documented and preserves quality codes" vertex="1">
+          <mxGeometry height="90" width="120" x="11471" y="-419" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-75" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-277" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="YBhsTPMUBiwthjwb7pRI-280" value="Diagnostic only">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-277" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;49&lt;/b&gt; &amp;nbsp; Create &lt;b&gt;station_df&lt;/b&gt;:&lt;br&gt;&lt;b&gt;ds.to_dataframe()&lt;/b&gt;&lt;br&gt;then &lt;b&gt;.reset_index()&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="11664" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-279" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="verify that that station day keys ramin unique and quality mask columns survive the conversions" vertex="1">
+          <mxGeometry height="115" width="146" x="11676" y="-444" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-76" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-277" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-282" value="Full station_df">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-280" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;50&lt;/b&gt; &amp;nbsp; Display diagnostic counts:&lt;br&gt;&lt;b&gt;station_df.groupby(station)&lt;br&gt;[target_vars].count()&lt;/b&gt;&lt;br&gt;station_df is unchanged" vertex="1">
+          <mxGeometry height="95" width="200" x="11684" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-281" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="eport raw availability, quality-rejected observations, and usable observations separately" vertex="1">
+          <mxGeometry height="109" width="129" x="11714" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-282" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;51&lt;/b&gt; &amp;nbsp; Save &lt;b&gt;station_df&lt;/b&gt; to&lt;br&gt;&lt;b&gt;all_station_data.csv&lt;/b&gt;&lt;br&gt;with &lt;b&gt;index=False&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="12093" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-283" parent="1" style="shape=wedgeCallout;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="provide a data dictionary or accompanying metadata record" vertex="1">
+          <mxGeometry height="80" width="120" x="12144" y="-449" as="geometry" />
+        </mxCell>
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-284" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this loses the index and i am not sure if tha is&amp;nbsp; ok or not" vertex="1">
+          <mxGeometry height="80" width="120" x="12183" y="-529" as="geometry" />
+        </mxCell>
+        <mxCell id="WcriJxCStyfXSmQ5elGc-1" parent="1" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;" value="loops" vertex="1">
+          <mxGeometry height="80" width="80" x="901" y="-133" as="geometry" />
+        </mxCell>
+        <mxCell id="review-failed-station" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-164" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="YBhsTPMUBiwthjwb7pRI-262" value="Skip failed station; no metadata append">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="5007" y="640" />
+              <mxPoint x="10271" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="review-drop-invalid" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-174" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-176" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="review-missing-variable" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-211" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="YBhsTPMUBiwthjwb7pRI-239" value="Skip this variable">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7072.5" y="270" />
+              <mxPoint x="9527" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="review-missing-variable-reporting" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=11;" value="Current code skips silently.&lt;br&gt;Reporting remains a proposed addition." vertex="1">
+          <mxGeometry height="75" width="210" x="7195" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="review-store-observations" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontSize=11;" value="&lt;b&gt;38&lt;/b&gt; &amp;nbsp; Store one station row:&lt;br&gt;&lt;b&gt;data_matrices[var][i, :]&lt;/b&gt;&lt;br&gt;= &lt;b&gt;vals_converted&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="220" x="8990" y="-97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="review-store-then-mask" edge="1" parent="1" source="review-store-observations" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-235" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="review-build-dataset" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontSize=11;" value="&lt;b&gt;45&lt;/b&gt; &amp;nbsp; Construct &lt;b&gt;ds = xr.Dataset(...)&lt;/b&gt;&lt;br&gt;from &lt;b&gt;data_vars&lt;/b&gt;&lt;br&gt;plus station/time coordinates&lt;br&gt;and station metadata" vertex="1">
+          <mxGeometry height="80" width="210" x="10817" y="-329" as="geometry" />
+        </mxCell>
+        <mxCell id="review-dataset-year" edge="1" parent="1" source="review-build-dataset" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-269" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="review-index-clarification" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=11;" value="Clarification: &lt;b&gt;reset_index()&lt;/b&gt; keeps station and time as columns. &lt;b&gt;index=False&lt;/b&gt; omits only extra row numbers; dates and station IDs are retained." vertex="1">
+          <mxGeometry height="100" width="240" x="12083" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="review-shape-clarification" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=11;" value="Each &lt;b&gt;data_matrices[var]&lt;/b&gt; and &lt;b&gt;qc_matrices[var]&lt;/b&gt; is &lt;b&gt;(n_stations, n_days)&lt;/b&gt;: station rows, date columns. Different variables have separate matrices." vertex="1">
+          <mxGeometry height="110" width="240" x="3492" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="review-review-note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=11;" value="Reviewed copy: corrected connections and variable tracking. Original yellow/white notes retained verbatim. Blue notes are clarifications. Dashed diagnostic arrows do not replace the main dataframe. CSV-only export is the agreed plan; notebook code still needs that edit." vertex="1">
+          <mxGeometry height="145" width="420" x="1000" y="-350" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

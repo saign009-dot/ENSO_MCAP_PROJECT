@@ -1,0 +1,806 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="S" name="1 Notebook workflow">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="#111111" adaptiveColors="none">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Data splice — inspect gaps and donor records&lt;/b&gt;&lt;br&gt;Current code investigates coverage. No replacement observations, spliced output or pipeline update is implemented.&lt;br&gt;Current source reviewed October 29, 2026. Yellow notes = proposed fixes / buildouts." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="30" width="1150" height="150" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Chart key — same shapes as the station chart&lt;/b&gt;&lt;br&gt;Hexagon: general process; step shape: calculation&lt;br&gt;Tape shape: loop; double-border box: decision; diamonds: branch answers&lt;br&gt;Cylinder: table / matrix; white callout: explanation&lt;br&gt;Yellow callout: revision / further thought; variables in bold&lt;br&gt;Numbers identify steps; no notebook-cell references." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1450" y="30" width="1050" height="150" />
+        </mxCell>
+        <mxCell id="S00" value="&lt;b&gt;S00&lt;/b&gt;&lt;br&gt;Start" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="S01" value="&lt;b&gt;S01&lt;/b&gt;&lt;br&gt;Imports &lt;b&gt;pd, Path, plt&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-0" source="S00" target="S01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S02" value="&lt;b&gt;S02&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;data_dir&lt;/b&gt;&lt;br&gt;../station_data/ghcnd/record_splices&lt;br&gt;Creates directory" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-1" source="S01" target="S02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S03" value="&lt;b&gt;S03&lt;/b&gt;&lt;br&gt;inits station IDs&lt;br&gt;&lt;b&gt;intl_falls, msp, chan, lfork&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-2" source="S02" target="S03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S04" value="&lt;b&gt;S04&lt;/b&gt;&lt;br&gt;inits NOAA access base &lt;b&gt;url&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-3" source="S03" target="S04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S05" value="&lt;b&gt;S05&lt;/b&gt;&lt;br&gt;Define &lt;b&gt;load_station&lt;/b&gt;&lt;br&gt;Load and date-index station data&lt;br&gt;tab 2" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-4" source="S04" target="S05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S06" value="&lt;b&gt;S06&lt;/b&gt;&lt;br&gt;Call load_station(intl_falls)&lt;br&gt;inits &lt;b&gt;intl_falls_df&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2140" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-5" source="S05" target="S06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S07" value="&lt;b&gt;S07&lt;/b&gt;&lt;br&gt;Call load_station(msp)&lt;br&gt;inits &lt;b&gt;msp_df&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2480" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-6" source="S06" target="S07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S08" value="&lt;b&gt;S08&lt;/b&gt;&lt;br&gt;Call load_station(chan)&lt;br&gt;inits &lt;b&gt;chan_df&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2820" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-7" source="S07" target="S08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S09" value="&lt;b&gt;S09&lt;/b&gt;&lt;br&gt;Call load_station(lfork)&lt;br&gt;inits &lt;b&gt;lfork_df&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3160" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-8" source="S08" target="S09" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S10" value="&lt;b&gt;S10&lt;/b&gt;&lt;br&gt;Copy 1999-2005 slices&lt;br&gt;inits &lt;b&gt;msp_slice&lt;/b&gt;&lt;br&gt;and &lt;b&gt;chanhassen_slice&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3500" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-9" source="S09" target="S10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S11" value="&lt;b&gt;S11&lt;/b&gt;&lt;br&gt;Copy 2001-2003 slices&lt;br&gt;inits &lt;b&gt;intl_falls_slice&lt;/b&gt;&lt;br&gt;and &lt;b&gt;lfork_slice&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3840" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-10" source="S10" target="S11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S12" value="&lt;b&gt;S12&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;variables&lt;/b&gt;&lt;br&gt;TMAX, TMIN, PRCP,&lt;br&gt;SNOW, SNWD" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4180" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-11" source="S11" target="S12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S13" value="&lt;b&gt;S13&lt;/b&gt;&lt;br&gt;Define &lt;b&gt;clean_for_comparison&lt;/b&gt;&lt;br&gt;Clean comparison values and apply quality flags&lt;br&gt;tab 2" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4520" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-12" source="S12" target="S13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S14" value="&lt;b&gt;S14&lt;/b&gt;&lt;br&gt;Clean msp_slice&lt;br&gt;inits &lt;b&gt;msp_compare&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4860" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-13" source="S13" target="S14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S15" value="&lt;b&gt;S15&lt;/b&gt;&lt;br&gt;Clean chanhassen_slice&lt;br&gt;inits &lt;b&gt;chanhassen_compare&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5200" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-14" source="S14" target="S15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S16" value="&lt;b&gt;S16&lt;/b&gt;&lt;br&gt;Clean intl_falls_slice&lt;br&gt;inits &lt;b&gt;intl_falls_compare&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5540" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-15" source="S15" target="S16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S17" value="&lt;b&gt;S17&lt;/b&gt;&lt;br&gt;Clean lfork_slice&lt;br&gt;inits &lt;b&gt;lfork_compare&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5880" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-16" source="S16" target="S17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S18" value="&lt;b&gt;S18&lt;/b&gt;&lt;br&gt;Define &lt;b&gt;monthly_coverage&lt;/b&gt;&lt;br&gt;Count usable observations by month&lt;br&gt;tab 3" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6220" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-17" source="S17" target="S18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S19" value="&lt;b&gt;S19&lt;/b&gt;&lt;br&gt;Call monthly_coverage&lt;br&gt;MSP vs Chanhassen&lt;br&gt;2000-01-01 to 2004-12-31" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6560" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-18" source="S18" target="S19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S20" value="&lt;b&gt;S20&lt;/b&gt;&lt;br&gt;Call monthly_coverage&lt;br&gt;International Falls vs Littlefork&lt;br&gt;2002-01-01 to 2002-12-31" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6900" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-19" source="S19" target="S20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S21" value="&lt;b&gt;S21&lt;/b&gt;&lt;br&gt;Define &lt;b&gt;compare_snow&lt;/b&gt;&lt;br&gt;Plot target and donor snowfall / snow depth&lt;br&gt;tab 3" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7240" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-20" source="S20" target="S21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S22" value="&lt;b&gt;S22&lt;/b&gt;&lt;br&gt;Call compare_snow&lt;br&gt;MSP vs Chanhassen&lt;br&gt;1999-01-01 to 2005-12-31" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7580" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-21" source="S21" target="S22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S23" value="&lt;b&gt;S23&lt;/b&gt;&lt;br&gt;Second plot call evaluates&lt;br&gt;&lt;b&gt;littlefork_compare&lt;/b&gt;&lt;br&gt;NameError: not defined&lt;br&gt;Call never enters helper" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7920" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-22" source="S22" target="S23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S24" value="&lt;b&gt;S24&lt;/b&gt;&lt;br&gt;Define &lt;b&gt;snow_counts&lt;/b&gt;&lt;br&gt;Count missing, zero and positive days by year&lt;br&gt;tab 3" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8260" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-23" source="S23" target="S24" value="Later notebook cell; can be run manually" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S25" value="&lt;b&gt;S25&lt;/b&gt;&lt;br&gt;Build station-loop list&lt;br&gt;references &lt;b&gt;littlefork_compare&lt;/b&gt;&lt;br&gt;NameError before first iteration" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8600" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-24" source="S24" target="S25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S26" value="&lt;b&gt;S26&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;name, df, start, end&lt;/b&gt;&lt;br&gt;MSP, Chanhassen,&lt;br&gt;International Falls, Littlefork" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8940" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-25" source="S25" target="S26" value="Only after variable-name correction" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S27" value="&lt;b&gt;S27&lt;/b&gt;&lt;br&gt;Print &lt;b&gt;name&lt;/b&gt;&lt;br&gt;Create daily &lt;b&gt;dates&lt;/b&gt;&lt;br&gt;full selected calendar years" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9280" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-26" source="S26" target="S27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S28" value="&lt;b&gt;S28&lt;/b&gt;&lt;br&gt;Reindex df to dates&lt;br&gt;call &lt;b&gt;snow_counts&lt;/b&gt;&lt;br&gt;Display yearly counts" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9620" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-27" source="S27" target="S28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S29" value="&lt;b&gt;S29&lt;/b&gt;&lt;br&gt;Another station?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9960" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-28" source="S28" target="S29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S30" value="&lt;b&gt;S30&lt;/b&gt;&lt;br&gt;Define &lt;b&gt;missing_runs&lt;/b&gt;&lt;br&gt;Find consecutive missing-day runs&lt;br&gt;tab 3" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10300" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-29" source="S29-branch-0" target="S30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S31" value="&lt;b&gt;S31&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;name, df, start, end&lt;/b&gt;&lt;br&gt;MSP: 2000-2004&lt;br&gt;International Falls: 2002" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10640" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-30" source="S30" target="S31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S32" value="&lt;b&gt;S32&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;var&lt;/b&gt;&lt;br&gt;SNOW then SNWD" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10980" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-31" source="S31" target="S32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S33" value="&lt;b&gt;S33&lt;/b&gt;&lt;br&gt;Print station and var&lt;br&gt;call &lt;b&gt;missing_runs&lt;/b&gt;&lt;br&gt;Display missing-run table" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11320" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-32" source="S32" target="S33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S34" value="&lt;b&gt;S34&lt;/b&gt;&lt;br&gt;Another variable?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11660" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-33" source="S33" target="S34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S35" value="&lt;b&gt;S35&lt;/b&gt;&lt;br&gt;Another target station?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12000" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-34" source="S34-branch-0" target="S35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S36" value="&lt;b&gt;S36&lt;/b&gt;&lt;br&gt;End investigation&lt;br&gt;No splice / saved product" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12340" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-35" source="S35-branch-0" target="S36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-36" source="S29-branch-1" target="S26" value="next item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="10082.5" y="1010" />
+              <mxPoint x="9062.5" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-37" source="S34-branch-1" target="S32" value="next item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="11782.5" y="1010" />
+              <mxPoint x="11102.5" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-38" source="S35-branch-1" target="S31" value="next item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="12122.5" y="1450" />
+              <mxPoint x="10762.5" y="1450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S02-bottom" value="note: directory is created, but current code neither reads cached splice files from it nor writes any results into it." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="765" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-39" source="S02-bottom" target="S02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S03-top" value="note: intl_falls USW00014918; msp USW00014922; chan USC00211448; lfork USC00214809. Donor records are comparison candidates, not automatic replacements." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1105" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-40" source="S03-top" target="S03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S06-bottom" value="FIX / BUILDOUT: these are live reads on every run, without a cache or download exception handler. Record input versions / dates, validate schema and preserve reproducible dated snapshots." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2125" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-41" source="S06-bottom" target="S06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S10-top" value="note: slices copy existing station rows only. They do not add missing dates. A full 1999-2005 calendar has 2,557 days; actual source row counts may differ." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3485" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-42" source="S10-top" target="S10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S11-bottom" value="note: 2001-2003 has 1,095 calendar days. Each station has its own record length / raw column set. Clean comparison tables have 5 columns and a DATE index." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3825" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-43" source="S11-bottom" target="S11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S17-top" value="FIX: this code defines lfork_compare. Later cells use littlefork_compare twice. Use one consistent name; do not let an old kernel variable hide the error." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5865" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-44" source="S17-top" target="S17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S19-bottom" value="note: coverage counts usable observations, not snowfall amount. 60 months x 11 columns: 5 metrics per station plus expected days. Leap years are handled by days_in_month." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6545" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-45" source="S19-bottom" target="S19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S20-top" value="note: 12 months x 11 columns. Counts use actual month lengths. A high donor count alone does not establish agreement or station interchangeability." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6885" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-46" source="S20-top" target="S20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S22-bottom" value="note: two axes, SNOW and SNWD; each plots target and donor on a shared daily calendar. Figure is shown, not saved." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7565" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-47" source="S22-bottom" target="S22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S23-top" value="CONFIRMED BUG: fresh sequential execution stops here after the MSP figure. The first target / donor plot may succeed; the Littlefork plot is not produced by this call." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7905" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-48" source="S23-top" target="S23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S25-bottom" value="CONFIRMED BUG: Python evaluates the whole list before looping. The undefined Littlefork name prevents ALL four station-count iterations, including the MSP one." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8585" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-49" source="S25-bottom" target="S25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S28-top" value="note: after the name fix, MSP / Chanhassen yearly tables are 7 x 6 and Falls / Littlefork 3 x 6. Missing / zero / positive are separate counts, not replacement values." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9605" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-50" source="S28-top" target="S28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S30-bottom" value="note: the missing-run cell can be executed independently after the earlier comparison tables exist. It uses MSP / Falls only and does not reference the misnamed donor variable." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10285" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-51" source="S30-bottom" target="S30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S33-top" value="note: each result is R x 3: start, end, days. R varies by station / variable. Reindexed absent dates and quality-rejected observations both count as missing." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11305" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-52" source="S33-top" target="S33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S36-bottom" value="BUILDOUT: no assignments replace target observations; no to_csv or savefig executes. Do not treat the gap investigation as an implemented splice." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12325" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-53" source="S36-bottom" target="S36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="splice-plan" value="&lt;b&gt;BUILDOUT: decide and implement replacements explicitly&lt;/b&gt;&lt;br&gt;Inspect overlapping target / donor observations, exact dates, variable-specific quality and potential station differences. Distinguish SNOW (new snowfall) from SNWD (snow depth).&lt;br&gt;Choose missing-only replacement or another documented rule. Keep target values where the rule requires; do not blindly copy all donor columns or add snow depth as snowfall.&lt;br&gt;Preserve original target data and log target / donor IDs, dates, variables, old and new values, flags and reason. Save derived spliced observations and diagnostics. Connect that output to the analysis input explicitly." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5880" y="1100" width="1450" height="250" />
+        </mxCell>
+        <mxCell id="scope" value="&lt;b&gt;VERIFY / downstream handoff&lt;/b&gt;&lt;br&gt;Historical diagnostics suggested MSP gaps around 2000-2004 and Falls gaps in 2002. Recheck exact spans and donor availability against the selected snapshot; saved outputs alone do not verify current source execution.&lt;br&gt;Compare results with and without accepted splices. Preserve full historical acquisition / storage; trim phase-one results to 1950 onward in downstream analysis.&lt;br&gt;The four-season, La Nina / neutral, SD, missing-data reporting and Kenny-table requirements remain downstream tasks. Splicing must preserve the daily values, dates, units and quality information those tasks need." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10300" y="1100" width="1400" height="250" />
+        </mxCell>
+        <mxCell id="S29-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10225.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="S29-branch-0-edge" source="S29" target="S29-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S29-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10060.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="S29-branch-1-edge" source="S29" target="S29-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S34-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11925.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="S34-branch-0-edge" source="S34" target="S34-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S34-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11760.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="S34-branch-1-edge" source="S34" target="S34-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S35-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12265.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="S35-branch-0-edge" source="S35" target="S35-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="S35-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12100.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="S35-branch-1-edge" source="S35" target="S35-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="L" name="2 Loading and cleaning">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="#111111" adaptiveColors="none">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Data splice — loading and cleaning helpers&lt;/b&gt;&lt;br&gt;Definitions run only when called. load_station returns a raw date-indexed table; clean_for_comparison returns a cleaned 5-column comparison table.&lt;br&gt;Current source reviewed October 29, 2026. Yellow notes = proposed fixes / buildouts." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="30" width="1150" height="150" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Chart key — same shapes as the station chart&lt;/b&gt;&lt;br&gt;Hexagon: general process; step shape: calculation&lt;br&gt;Tape shape: loop; double-border box: decision; diamonds: branch answers&lt;br&gt;Cylinder: table / matrix; white callout: explanation&lt;br&gt;Yellow callout: revision / further thought; variables in bold&lt;br&gt;Numbers identify steps; no notebook-cell references." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1450" y="30" width="1050" height="150" />
+        </mxCell>
+        <mxCell id="L00" value="&lt;b&gt;Load 1&lt;/b&gt;&lt;br&gt;Enter &lt;b&gt;load_station(station_id)&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="L01" value="&lt;b&gt;Load 2&lt;/b&gt;&lt;br&gt;R" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-0" source="L00" target="L01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="L02" value="&lt;b&gt;Load 3&lt;/b&gt;&lt;br&gt;S" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-1" source="L01" target="L02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="L03" value="&lt;b&gt;Load 4&lt;/b&gt;&lt;br&gt;Return indexed dataframe&lt;br&gt;to station call" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-2" source="L02" target="L03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="L01-annotation" value="VERIFY: missing / malformed files, bad dates and duplicate station-days are not explicitly handled. Network / parsing errors stop the call." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="425" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-3" source="L01-annotation" target="L01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C00" value="&lt;b&gt;Clean 1&lt;/b&gt;&lt;br&gt;Enter &lt;b&gt;clean_for_comparison(df)&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="C01" value="&lt;b&gt;Clean 2&lt;/b&gt;&lt;br&gt;R" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-4" source="C00" target="C01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C02" value="&lt;b&gt;Clean 3&lt;/b&gt;&lt;br&gt;S" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-5" source="C01" target="C02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C03" value="&lt;b&gt;Clean 4&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;attr_col&lt;/b&gt;&lt;br&gt;var + _ATTRIBUTES&lt;br&gt;Does column exist?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-6" source="C02" target="C03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C04" value="&lt;b&gt;Clean 5&lt;/b&gt;&lt;br&gt;F" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-7" source="C03-branch-0" target="C04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C05" value="&lt;b&gt;Clean 6&lt;/b&gt;&lt;br&gt;E" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-8" source="C04" target="C05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C06" value="&lt;b&gt;Clean 7&lt;/b&gt;&lt;br&gt;E" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2140" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-9" source="C05" target="C06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C07" value="&lt;b&gt;Clean 8&lt;/b&gt;&lt;br&gt;F" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2480" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-10" source="C06" target="C07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C08" value="&lt;b&gt;Clean 9&lt;/b&gt;&lt;br&gt;F" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2820" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-11" source="C07" target="C08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C09" value="&lt;b&gt;Clean 10&lt;/b&gt;&lt;br&gt;Another variable?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3160" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-12" source="C08" target="C09" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C10" value="&lt;b&gt;Clean 11&lt;/b&gt;&lt;br&gt;M" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3500" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-13" source="C09-branch-0" target="C10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C11" value="&lt;b&gt;Clean 12&lt;/b&gt;&lt;br&gt;Return &lt;b&gt;values&lt;/b&gt;&lt;br&gt;5 columns; original date index" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3840" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-14" source="C10" target="C11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-15" source="C03-branch-1" target="C09" value="keep numeric values" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1242.5" y="2110" />
+              <mxPoint x="3282.5" y="2110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-16" source="C09-branch-1" target="C02" value="next variable" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="3282.5" y="2150" />
+              <mxPoint x="902.5" y="2150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C01-annotation" value="note: n source rows x raw columns becomes n x 5. Absent requested variable columns become all NaN. Row count does not change; duplicate dates are not resolved." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="425" y="1390" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-17" source="C01-annotation" target="C01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C03-annotation" value="VERIFY: when attributes are absent the values stay numeric without quality rejection or trace handling. Choose and document a fallback consistent with the production downloader." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1105" y="1850" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-18" source="C03-annotation" target="C03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C07-annotation" value="note: trace values become zero. A nonempty quality flag then overrides even that zero to NaN. Source flag / observation time / original flag identity are not returned." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2465" y="1390" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-19" source="C07-annotation" target="C07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C10-annotation" value="note: temperature becomes C; PRCP becomes mm. SNOW and SNWD already use mm and are unchanged. No imperial conversion occurs here." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3485" y="1850" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-20" source="C10-annotation" target="C10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C03-branch-0" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1385.0" y="1698.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="C03-branch-0-edge" source="C03" target="C03-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C03-branch-1" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1220.5" y="1805.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="C03-branch-1-edge" source="C03" target="C03-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C09-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3425.0" y="1698.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="C09-branch-0-edge" source="C09" target="C09-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="C09-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3260.5" y="1805.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="C09-branch-1-edge" source="C09" target="C09-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="L-description" value="&lt;b&gt;Load and date-index station data&lt;/b&gt;&lt;br&gt;load_station" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="200.0" width="1050" height="70" />
+        </mxCell>
+        <mxCell id="C-description" value="&lt;b&gt;Clean comparison values and apply quality flags&lt;/b&gt;&lt;br&gt;clean_for_comparison" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="1300.0" width="1050" height="70" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="M" name="3 Diagnostic helpers">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="#111111" adaptiveColors="none">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Data splice — coverage, plots, yearly counts and missing runs&lt;/b&gt;&lt;br&gt;Four helper flows. Each returns to its own caller on tab 1. Tables / figures are displayed, not saved.&lt;br&gt;Current source reviewed October 29, 2026. Yellow notes = proposed fixes / buildouts." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="30" width="1150" height="150" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Chart key — same shapes as the station chart&lt;/b&gt;&lt;br&gt;Hexagon: general process; step shape: calculation&lt;br&gt;Tape shape: loop; double-border box: decision; diamonds: branch answers&lt;br&gt;Cylinder: table / matrix; white callout: explanation&lt;br&gt;Yellow callout: revision / further thought; variables in bold&lt;br&gt;Numbers identify steps; no notebook-cell references." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1450" y="30" width="1050" height="150" />
+        </mxCell>
+        <mxCell id="M00" value="&lt;b&gt;Coverage 1&lt;/b&gt;&lt;br&gt;Enter &lt;b&gt;monthly_coverage&lt;/b&gt;&lt;br&gt;left, right, names, start, end" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="M01" value="&lt;b&gt;Coverage 2&lt;/b&gt;&lt;br&gt;C" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-0" source="M00" target="M01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="M02" value="&lt;b&gt;Coverage 3&lt;/b&gt;&lt;br&gt;R" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-1" source="M01" target="M02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="M03" value="&lt;b&gt;Coverage 4&lt;/b&gt;&lt;br&gt;C" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-2" source="M02" target="M03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="M04" value="&lt;b&gt;Coverage 5&lt;/b&gt;&lt;br&gt;A" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-3" source="M03" target="M04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="M05" value="&lt;b&gt;Coverage 6&lt;/b&gt;&lt;br&gt;Display &lt;b&gt;counts&lt;/b&gt;&lt;br&gt;Return None" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-4" source="M04" target="M05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="M03-annotation" value="note: D x 5 per station becomes B x 5 monthly counts. Side-by-side concat is B x 10, then expected days makes B x 11. Columns have station / variable levels." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1105" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-5" source="M03-annotation" target="M03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="P00" value="&lt;b&gt;Plot 1&lt;/b&gt;&lt;br&gt;Enter &lt;b&gt;compare_snow&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="P01" value="&lt;b&gt;Plot 2&lt;/b&gt;&lt;br&gt;C" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-6" source="P00" target="P01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="P02" value="&lt;b&gt;Plot 3&lt;/b&gt;&lt;br&gt;S" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-7" source="P01" target="P02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="P03" value="&lt;b&gt;Plot 4&lt;/b&gt;&lt;br&gt;P" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-8" source="P02" target="P03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="P04" value="&lt;b&gt;Plot 5&lt;/b&gt;&lt;br&gt;Another snow variable?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-9" source="P03" target="P04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="P05" value="&lt;b&gt;Plot 6&lt;/b&gt;&lt;br&gt;Set title on axes[0]&lt;br&gt;tight_layout; show&lt;br&gt;Return None" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="1660.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-10" source="P04-branch-0" target="P05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-11" source="P04-branch-1" target="P02" value="next variable" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1582.5" y="2110" />
+              <mxPoint x="902.5" y="2110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P03-annotation" value="note: each line has D daily positions; two station lines per axis. Missing values produce gaps. This visual comparison does not calculate a replacement or agreement statistic." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1105" y="1850" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-12" source="P03-annotation" target="P03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="Y00" value="&lt;b&gt;Yearly 1&lt;/b&gt;&lt;br&gt;Enter &lt;b&gt;snow_counts(df)&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="2760.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="Y01" value="&lt;b&gt;Yearly 2&lt;/b&gt;&lt;br&gt;i" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="2760.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-13" source="Y00" target="Y01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="Y02" value="&lt;b&gt;Yearly 3&lt;/b&gt;&lt;br&gt;S" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="2760.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-14" source="Y01" target="Y02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="Y03" value="&lt;b&gt;Yearly 4&lt;/b&gt;&lt;br&gt;B" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="2760.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-15" source="Y02" target="Y03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="Y04" value="&lt;b&gt;Yearly 5&lt;/b&gt;&lt;br&gt;G" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="2760.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-16" source="Y03" target="Y04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="Y05" value="&lt;b&gt;Yearly 6&lt;/b&gt;&lt;br&gt;Another variable?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="2760.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-17" source="Y04" target="Y05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="Y06" value="&lt;b&gt;Yearly 7&lt;/b&gt;&lt;br&gt;Concat tables on axis=1&lt;br&gt;Return yearly table" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2140" y="2760.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-18" source="Y05-branch-0" target="Y06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-19" source="Y05-branch-1" target="Y02" value="next variable" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1922.5" y="3210" />
+              <mxPoint x="902.5" y="3210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y04-annotation" value="note: D x 3 indicator table becomes Y x 3 per variable, then Y x 6 with variable / statistic column levels. These are calendar-year counts, not winter or season totals." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1445" y="2950" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-20" source="Y04-annotation" target="Y04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="G00" value="&lt;b&gt;Gaps 1&lt;/b&gt;&lt;br&gt;Enter &lt;b&gt;missing_runs&lt;/b&gt;&lt;br&gt;df, var, start, end" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="3860.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="G01" value="&lt;b&gt;Gaps 2&lt;/b&gt;&lt;br&gt;C" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="3860.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-21" source="G00" target="G01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="G02" value="&lt;b&gt;Gaps 3&lt;/b&gt;&lt;br&gt;F" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="3860.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-22" source="G01" target="G02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="G03" value="&lt;b&gt;Gaps 4&lt;/b&gt;&lt;br&gt;B" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="3860.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-23" source="G02" target="G03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="G04" value="&lt;b&gt;Gaps 5&lt;/b&gt;&lt;br&gt;G" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="3860.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-24" source="G03" target="G04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="G05" value="&lt;b&gt;Gaps 6&lt;/b&gt;&lt;br&gt;Reset index, drop old index&lt;br&gt;Return gap table" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="3860.0" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-25" source="G04" target="G05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="G02-annotation" value="note: groups identify consecutive missing and nonmissing blocks. Filtering keeps only missing blocks. Days counts daily positions, so leap days are included." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="765" y="4050" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-26" source="G02-annotation" target="G02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="G05-annotation" value="note: R missing runs x 3 columns. start / end are inclusive. No gap is filled; no donor is consulted. Entirely unavailable periods are still reported after daily reindexing." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1785" y="3590" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-27" source="G05-annotation" target="G05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=#ffffff;fontColor=#ffffff;labelBackgroundColor=#111111;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="P04-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1725.0" y="1698.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="P04-branch-0-edge" source="P04" target="P04-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="P04-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1560.5" y="1805.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="P04-branch-1-edge" source="P04" target="P04-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="Y05-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2065.0" y="2798.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="Y05-branch-0-edge" source="Y05" target="Y05-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="Y05-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1900.5" y="2905.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="Y05-branch-1-edge" source="Y05" target="Y05-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#ffffff;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="M-description" value="&lt;b&gt;Count usable observations by month&lt;/b&gt;&lt;br&gt;monthly_coverage" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="200.0" width="1050" height="70" />
+        </mxCell>
+        <mxCell id="P-description" value="&lt;b&gt;Plot target and donor snowfall / snow depth&lt;/b&gt;&lt;br&gt;compare_snow" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="1300.0" width="1050" height="70" />
+        </mxCell>
+        <mxCell id="Y-description" value="&lt;b&gt;Count missing, zero and positive days by year&lt;/b&gt;&lt;br&gt;snow_counts" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="2400.0" width="1050" height="70" />
+        </mxCell>
+        <mxCell id="G-description" value="&lt;b&gt;Find consecutive missing-day runs&lt;/b&gt;&lt;br&gt;missing_runs" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="3500.0" width="1050" height="70" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

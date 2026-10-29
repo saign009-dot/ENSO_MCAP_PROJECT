@@ -1,0 +1,280 @@
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="enso-indices-v1" name="Indices download">
+    <mxGraphModel dx="5160" dy="2927" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="#111111" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="I00" parent="1" style="shape=triangle;direction=east;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="Start" vertex="1">
+          <mxGeometry height="110" width="230" x="100" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="I01" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;1&lt;/b&gt;&lt;br&gt;Imports dependencies&lt;br&gt;&lt;b&gt;Path&lt;/b&gt; and &lt;b&gt;pd&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="410" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I00-I01" edge="1" parent="1" source="I00" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I02" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;2&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;indicies_dir&lt;/b&gt;&lt;br&gt;../indicies_data/first_pass&lt;br&gt;and creates directory" vertex="1">
+          <mxGeometry height="110" width="230" x="720" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I01-I02" edge="1" parent="1" source="I01" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I03" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;3&lt;/b&gt;&lt;br&gt;inits output path&lt;br&gt;&lt;b&gt;output_roni_oni_tni_indicies&lt;/b&gt;&lt;br&gt;enso_historical_indicies.csv" vertex="1">
+          <mxGeometry height="110" width="230" x="1030" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I02-I03" edge="1" parent="1" source="I02" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I04" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;4&lt;/b&gt;&lt;br&gt;inits input paths&lt;br&gt;&lt;b&gt;oni_historic&lt;/b&gt;&lt;br&gt;&lt;b&gt;roni_historic&lt;/b&gt;&lt;br&gt;&lt;b&gt;tni_historic&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="1340" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I03-I04" edge="1" parent="1" source="I03" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I05" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;5&lt;/b&gt;&lt;br&gt;Read ONI txt into&lt;br&gt;&lt;b&gt;oni_historic_df&lt;/b&gt;&lt;br&gt;skip 10 rows, split whitespace&lt;br&gt;-99.99 becomes NaN" vertex="1">
+          <mxGeometry height="110" width="230" x="1650" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I04-I05" edge="1" parent="1" source="I04" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I06" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;6&lt;/b&gt;&lt;br&gt;Read RONI txt into&lt;br&gt;&lt;b&gt;roni_historic_df&lt;/b&gt;&lt;br&gt;skip 10 rows, split whitespace&lt;br&gt;-99.99 becomes NaN" vertex="1">
+          <mxGeometry height="110" width="230" x="1960" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I05-I06" edge="1" parent="1" source="I05" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I07" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;7&lt;/b&gt;&lt;br&gt;Read TNI csv into&lt;br&gt;&lt;b&gt;tni_historic_df&lt;/b&gt;&lt;br&gt;name cols Date and TNI&lt;br&gt;parse Date, sentinels become NaN" vertex="1">
+          <mxGeometry height="110" width="230" x="2270" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I06-I07" edge="1" parent="1" source="I06" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I08" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;8&lt;/b&gt;&lt;br&gt;Display source dfs&lt;br&gt;&lt;b&gt;tni_historic_df&lt;/b&gt;&lt;br&gt;&lt;b&gt;oni_historic_df&lt;/b&gt;&lt;br&gt;&lt;b&gt;roni_historic_df&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="2580" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I07-I08" edge="1" parent="1" source="I07" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I08">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I09" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;9&lt;/b&gt;&lt;br&gt;Add &lt;b&gt;Date&lt;/b&gt; to&lt;br&gt;&lt;b&gt;oni_historic_df&lt;/b&gt;&lt;br&gt;YEAR + MON/MMM + day 1" vertex="1">
+          <mxGeometry height="110" width="230" x="2890" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I08-I09" edge="1" parent="1" source="I08" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I09">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I10" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;10&lt;/b&gt;&lt;br&gt;Add &lt;b&gt;Date&lt;/b&gt; to&lt;br&gt;&lt;b&gt;roni_historic_df&lt;/b&gt;&lt;br&gt;YEAR + MON + day 1" vertex="1">
+          <mxGeometry height="110" width="230" x="3200" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I09-I10" edge="1" parent="1" source="I09" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I11" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;11&lt;/b&gt;&lt;br&gt;Display dated dfs&lt;br&gt;&lt;b&gt;tni_historic_df&lt;/b&gt;&lt;br&gt;&lt;b&gt;oni_historic_df&lt;/b&gt;&lt;br&gt;&lt;b&gt;roni_historic_df&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="3510" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I10-I11" edge="1" parent="1" source="I10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I12" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;12&lt;/b&gt;&lt;br&gt;Select &lt;b&gt;Date, ONI&lt;/b&gt;&lt;br&gt;from &lt;b&gt;oni_historic_df&lt;/b&gt;&lt;br&gt;and &lt;b&gt;Date, RONI&lt;/b&gt;&lt;br&gt;from &lt;b&gt;roni_historic_df&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="3820" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I11-I12" edge="1" parent="1" source="I11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I13" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;13&lt;/b&gt;&lt;br&gt;Outer join on &lt;b&gt;Date&lt;/b&gt;&lt;br&gt;inits&lt;br&gt;&lt;b&gt;oni_roni_historic_df&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="4130" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I12-I13" edge="1" parent="1" source="I12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I14" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;14&lt;/b&gt;&lt;br&gt;Outer join&lt;br&gt;&lt;b&gt;oni_roni_historic_df&lt;/b&gt;&lt;br&gt;with &lt;b&gt;tni_historic_df&lt;/b&gt;&lt;br&gt;on Date" vertex="1">
+          <mxGeometry height="110" width="230" x="4440" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I13-I14" edge="1" parent="1" source="I13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I15" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;15&lt;/b&gt;&lt;br&gt;Stores combined table as&lt;br&gt;&lt;b&gt;oni_roni_tni_historic_df&lt;/b&gt;&lt;br&gt;Date, ONI, RONI, TNI" vertex="1">
+          <mxGeometry height="110" width="230" x="4750" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I14-I15" edge="1" parent="1" source="I14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I16" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;16&lt;/b&gt;&lt;br&gt;Converts combined &lt;b&gt;Date&lt;/b&gt;&lt;br&gt;to datetime again in&lt;br&gt;&lt;b&gt;oni_roni_tni_historic_df&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="5060" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I15-I16" edge="1" parent="1" source="I15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I17" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;17&lt;/b&gt;&lt;br&gt;Adds &lt;b&gt;Year&lt;/b&gt; column&lt;br&gt;&lt;b&gt;oni_roni_tni_historic_df&lt;/b&gt;&lt;br&gt;Date.dt.year" vertex="1">
+          <mxGeometry height="110" width="230" x="5370" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I16-I17" edge="1" parent="1" source="I16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I18" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;18&lt;/b&gt;&lt;br&gt;Save&lt;br&gt;&lt;b&gt;oni_roni_tni_historic_df&lt;/b&gt;&lt;br&gt;to&lt;br&gt;&lt;b&gt;output_roni_oni_tni_indicies&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="5680" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I17-I18" edge="1" parent="1" source="I17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I19" parent="1" style="shape=cylinder3;boundedLbl=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;19&lt;/b&gt;&lt;br&gt;Saved file&lt;br&gt;&lt;b&gt;enso_historical_indicies.csv&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="5990" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I18-I19" edge="1" parent="1" source="I18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I20" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;20&lt;/b&gt;&lt;br&gt;Display final table&lt;br&gt;&lt;b&gt;oni_roni_tni_historic_df&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="6300" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I19-I20" edge="1" parent="1" source="I19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I21" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;" value="End" vertex="1">
+          <mxGeometry height="110" width="230" x="6610" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I20-I21" edge="1" parent="1" source="I20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="I21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;strokeColor=none;fillColor=none;fontSize=18;" value="&lt;b&gt;ENSO indices download v1.0 — current code flow&lt;/b&gt;&lt;br&gt;Reads local ONI, RONI and TNI files, aligns dates and saves one CSV.&lt;br&gt;Notebook source reviewed October 29, 2026. Yellow callouts are proposed fixes / buildouts." vertex="1">
+          <mxGeometry height="110" width="1000" x="100" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;strokeColor=none;fillColor=none;fontSize=14;" value="&lt;b&gt;Chart key&lt;/b&gt;&lt;br&gt;Hexagon = current process &amp;nbsp; Cylinder = saved file&lt;br&gt;White callout = explanation &amp;nbsp; Yellow callout = fix / buildout&lt;br&gt;Solid arrows = execution order &amp;nbsp; Dotted links = annotations&lt;br&gt;Dimensions below are rows x columns from local input snapshots." vertex="1">
+          <mxGeometry height="150" width="850" x="2200" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I01-note-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: imports pathlib and pandas directly. This notebook does not install requirements or download data." vertex="1">
+          <mxGeometry height="170" width="260" x="395" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I01-note-top-I01" edge="1" parent="1" source="I01-note-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I02-note-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: assumes execution from &lt;b&gt;scripts&lt;/b&gt;. mkdir creates folders, it does not populate missing input files." vertex="1">
+          <mxGeometry height="170" width="260" x="705" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I02-note-bottom-I02" edge="1" parent="1" source="I02-note-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I03-fix-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="BUILDOUT: record source URLs, versions, retrieval dates and checksums with the saved output. Need to be able to reproduce which inputs made a table." vertex="1">
+          <mxGeometry height="170" width="260" x="1015" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I03-fix-top-I03" edge="1" parent="1" source="I03-fix-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I04-fix-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="FIX / BUILDOUT: files are manually downloaded because of the certificate issue. Resolve acquisition, check update periods and report freshness before presenting to Kenny." vertex="1">
+          <mxGeometry height="170" width="260" x="1325" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I04-fix-bottom-I04" edge="1" parent="1" source="I04-fix-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="manual" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="Manual prerequisite&lt;br&gt;&lt;b&gt;ONI_NINO34_v6.txt&lt;/b&gt;&lt;br&gt;&lt;b&gt;RONI_NINO34_v6.txt&lt;/b&gt;&lt;br&gt;&lt;b&gt;tni.long.csv&lt;/b&gt;&lt;br&gt;must already be in &lt;b&gt;indicies_dir&lt;/b&gt;" vertex="1">
+          <mxGeometry height="170" width="260" x="1325" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e-manual-I04" edge="1" parent="1" source="manual" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I05-note-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: &lt;b&gt;oni_historic_df&lt;/b&gt;&lt;br&gt;2,124 x 7 before Date&lt;br&gt;MON/MMM is the center month for the supplied 3-month ONI value. No running mean is calculated here." vertex="1">
+          <mxGeometry height="170" width="260" x="1635" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I05-note-top-I05" edge="1" parent="1" source="I05-note-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I06-note-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: &lt;b&gt;roni_historic_df&lt;/b&gt;&lt;br&gt;2,120 x 8 before Date&lt;br&gt;skiprows=10 also passes a blank line before the header. File-format changes can break this read." vertex="1">
+          <mxGeometry height="170" width="260" x="1945" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I06-note-bottom-I06" edge="1" parent="1" source="I06-note-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I07-note-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: &lt;b&gt;tni_historic_df&lt;/b&gt;&lt;br&gt;1,884 x 2&lt;br&gt;Date already parsed; -99.99 and -9999 become NaN. The commented NetCDF alternative does not execute." vertex="1">
+          <mxGeometry height="170" width="260" x="2255" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I07-note-top-I07" edge="1" parent="1" source="I07-note-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I08-fix-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="BUILDOUT: turn inspection into checks for required columns, numeric index values, missing files and malformed dates. Errors currently stop execution; there is no recovery branch." vertex="1">
+          <mxGeometry height="170" width="260" x="2565" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I08-fix-bottom-I08" edge="1" parent="1" source="I08-fix-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I08">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I09-note-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: &lt;b&gt;oni_historic_df&lt;/b&gt; becomes 2,124 x 8. Adds Date; YEAR and MON/MMM stay in this source df. No daily rows are created." vertex="1">
+          <mxGeometry height="170" width="260" x="2875" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I09-note-top-I09" edge="1" parent="1" source="I09-note-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I09">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I10-note-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: &lt;b&gt;roni_historic_df&lt;/b&gt; becomes 2,120 x 9. Adds Date; YEAR and MON stay in this source df. TNI dates are left as read." vertex="1">
+          <mxGeometry height="170" width="260" x="3185" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I10-note-bottom-I10" edge="1" parent="1" source="I10-note-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I11-fix-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="FIX / BUILDOUT: check one row per month, dates on day 1 and matching month keys. Current sources have no duplicate dates; the notebook does not enforce that." vertex="1">
+          <mxGeometry height="170" width="260" x="3495" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I11-fix-top-I11" edge="1" parent="1" source="I11-fix-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I12-note-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: selection makes two-column inputs to the merge. Original dfs still hold SST columns and source PHASE. Source PHASE is not used as the downstream episode classifier." vertex="1">
+          <mxGeometry height="170" width="260" x="3805" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I12-note-bottom-I12" edge="1" parent="1" source="I12-note-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I13-note-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: &lt;b&gt;oni_roni_historic_df&lt;/b&gt;&lt;br&gt;2,124 x 3&lt;br&gt;Date, ONI, RONI&lt;br&gt;Outer join keeps dates from either input and fills unavailable values with NaN." vertex="1">
+          <mxGeometry height="170" width="260" x="4115" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I13-note-top-I13" edge="1" parent="1" source="I13-note-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I14-fix-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="FIX: validate both merges as one-to-one on Date. Duplicate keys could multiply rows. Sort and validate monthly continuity explicitly; merge order alone is not a calendar check." vertex="1">
+          <mxGeometry height="170" width="260" x="4425" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I14-fix-bottom-I14" edge="1" parent="1" source="I14-fix-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I15-note-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: &lt;b&gt;oni_roni_tni_historic_df&lt;/b&gt;&lt;br&gt;2,124 x 4 at this point&lt;br&gt;Outer join preserves the union of all dates. TNI starting in 1870 does not cut ONI / RONI back to 1870." vertex="1">
+          <mxGeometry height="170" width="260" x="4735" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I15-note-top-I15" edge="1" parent="1" source="I15-note-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I16-note-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: dates were already datetime from the source steps. This repeats conversion on the merged table; it does not change index values or create seasons." vertex="1">
+          <mxGeometry height="170" width="260" x="5045" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I16-note-bottom-I16" edge="1" parent="1" source="I16-note-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I17-note-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: final df is &lt;b&gt;2,124 x 5&lt;/b&gt;&lt;br&gt;Date, ONI, RONI, TNI, Year&lt;br&gt;Year is the center month&#39;s calendar year, not winter_year. The old whole-dataframe .dt bug is already fixed." vertex="1">
+          <mxGeometry height="170" width="260" x="5355" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I17-note-top-I17" edge="1" parent="1" source="I17-note-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I18-fix-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="FIX: add &lt;b&gt;index=False&lt;/b&gt; to to_csv. Current code saves the pandas row number too; it can reload as Unnamed: 0. Preserve Date and Year as real columns." vertex="1">
+          <mxGeometry height="170" width="260" x="5665" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I18-fix-bottom-I18" edge="1" parent="1" source="I18-fix-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I19-fix-top" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="BUILDOUT: save coverage / missing-value report for each index. Last row is Dec 2026, but last valid ONI/RONI is Jul 2026 and TNI is May 2026 in these files." vertex="1">
+          <mxGeometry height="170" width="260" x="5975" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I19-fix-top-I19" edge="1" parent="1" source="I19-fix-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I20-note-bottom" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="note: display is active. Earlier review said displays were commented out; that no longer matches current code. This display does not change the saved table." vertex="1">
+          <mxGeometry height="170" width="260" x="6285" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e-I20-note-bottom-I20" edge="1" parent="1" source="I20-note-bottom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#ffffff;strokeWidth=1.5;dashed=1;endArrow=none;strokeColor=#aaaaaa;" target="I20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="coverage" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fontSize=12;" value="&lt;b&gt;Local snapshot check — not a notebook processing step&lt;/b&gt;&lt;br&gt;Combined row dates: Jan 1850 to Dec 2026; 2,124 rows.&lt;br&gt;ONI valid: Feb 1866 to Jul 2026; 198 missing rows.&lt;br&gt;RONI valid: Feb 1850 to Jul 2026; 6 missing rows.&lt;br&gt;TNI valid: Mar 1870 to May 2026; 249 missing rows.&lt;br&gt;These are first/last valid dates, not a claim of complete intervening coverage." vertex="1">
+          <mxGeometry height="210" width="570" x="5975" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="handoff" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="&lt;b&gt;BUILDOUT in the table builder — keep full history here&lt;/b&gt;&lt;br&gt;Derive episodes from the full index sequence, then trim reported seasons / results to 1950 onward.&lt;br&gt;Separate La Nina, neutral and El Nino downstream. Keep TNI raw pending interpretation / smoothing checks.&lt;br&gt;DJF / MAM / JJA / SON use Jan / Apr / Jul / Oct centered ONI/RONI entries. Do not average overlapping entries again.&lt;br&gt;Month-length weighting, weather missing-value stats / SD, Kenny&#39;s table and per-station tables belong in the later analysis. Ask again about Kenny&#39;s variables / layout when reaching that table." vertex="1">
+          <mxGeometry height="210" width="1430" x="5060" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="meaning" parent="1" style="shape=callout;perimeter=calloutPerimeter;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#111111;align=center;verticalAlign=middle;spacing=10;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="&lt;b&gt;VERIFY before comparative use&lt;/b&gt;&lt;br&gt;Document TNI&#39;s own definition and smoothing; do not inherit ONI/RONI thresholds. Archive the exact source versions for comparison.&lt;br&gt;Monthly timestamps are alignment keys. They do not mean all three indices describe the same time window.&lt;br&gt;The loader neither rounds values nor identifies ENSO episodes; those are downstream operations." vertex="1">
+          <mxGeometry height="180" width="1080" x="2580" y="1010" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
