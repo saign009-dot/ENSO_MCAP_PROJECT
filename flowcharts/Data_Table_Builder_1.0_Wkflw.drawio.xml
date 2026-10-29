@@ -1,0 +1,1196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="A" name="1 Assembly and winter classes">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Data table builder v0.0 — assemble daily data and classify winters&lt;/b&gt;&lt;br&gt;Continue at B00 on tab 2 after A44. Helper definitions and identify_runs details are on tab 3.&lt;br&gt;Current source reviewed October 29, 2026. Yellow notes = proposed fixes / buildouts." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=default;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="30" width="1150" height="150" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Chart key — same shapes as the station chart&lt;/b&gt;&lt;br&gt;Hexagon: general process; step shape: calculation&lt;br&gt;Tape shape: loop; double-border box: decision; diamonds: branch answers&lt;br&gt;Cylinder: table / matrix; white callout: explanation&lt;br&gt;Yellow callout: revision / further thought; variables in bold&lt;br&gt;Numbers identify steps; no notebook-cell references." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=default;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1450" y="30" width="1050" height="150" />
+        </mxCell>
+        <mxCell id="A00" value="&lt;b&gt;A00&lt;/b&gt;&lt;br&gt;Start" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="A01" value="&lt;b&gt;A01&lt;/b&gt;&lt;br&gt;Imports &lt;b&gt;pd, Path, nbformat, np, plt, ListedColormap&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-0" source="A00" target="A01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A02" value="&lt;b&gt;A02&lt;/b&gt;&lt;br&gt;Run &lt;b&gt;enso_indicies_download_v1.0.ipynb&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-1" source="A01" target="A02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A03" value="&lt;b&gt;A03&lt;/b&gt;&lt;br&gt;Run &lt;b&gt;ghcnd_station_download_v1.0.ipynb&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-2" source="A02" target="A03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A04" value="&lt;b&gt;A04&lt;/b&gt;&lt;br&gt;inits input paths&lt;br&gt;&lt;b&gt;indicies_data&lt;/b&gt;&lt;br&gt;&lt;b&gt;station_data&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-3" source="A03" target="A04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A05" value="&lt;b&gt;A05&lt;/b&gt;&lt;br&gt;Read index CSV into&lt;br&gt;&lt;b&gt;indicies_data_df_forfunction&lt;/b&gt;&lt;br&gt;parse Date" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-4" source="A04" target="A05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A06" value="&lt;b&gt;A06&lt;/b&gt;&lt;br&gt;Read same index CSV into&lt;br&gt;&lt;b&gt;indicies_data_df&lt;/b&gt;&lt;br&gt;parse Date" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2140" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-5" source="A05" target="A06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A07" value="&lt;b&gt;A07&lt;/b&gt;&lt;br&gt;Read station CSV into&lt;br&gt;&lt;b&gt;stations_data_df&lt;/b&gt;&lt;br&gt;parse time" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2480" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-6" source="A06" target="A07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A08" value="&lt;b&gt;A08&lt;/b&gt;&lt;br&gt;Drop station rows with all 11 observation variables missing&lt;br&gt;updates &lt;b&gt;stations_data_df&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2820" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-7" source="A07" target="A08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A09" value="&lt;b&gt;A09&lt;/b&gt;&lt;br&gt;Add monthly period key&lt;br&gt;&lt;b&gt;indicies_data_df[Month]&lt;/b&gt;&lt;br&gt;from Date" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3160" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-8" source="A08" target="A09" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A10" value="&lt;b&gt;A10&lt;/b&gt;&lt;br&gt;Add monthly period key&lt;br&gt;&lt;b&gt;stations_data_df[Month]&lt;/b&gt;&lt;br&gt;from time" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3500" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-9" source="A09" target="A10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A11" value="&lt;b&gt;A11&lt;/b&gt;&lt;br&gt;Left join on Month&lt;br&gt;inits &lt;b&gt;station_obs_enso_indicies&lt;/b&gt;&lt;br&gt;validate many_to_one" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3840" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-10" source="A10" target="A11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A12" value="&lt;b&gt;A12&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;store_table&lt;/b&gt;&lt;br&gt;../outputs&lt;br&gt;and creates directory" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4180" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-11" source="A11" target="A12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A13" value="&lt;b&gt;A13&lt;/b&gt;&lt;br&gt;Save &lt;b&gt;station_obs_enso_indicies&lt;/b&gt;&lt;br&gt;station_obs_enso_indicies.csv&lt;br&gt;index=False" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4520" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-12" source="A12" target="A13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A14" value="&lt;b&gt;A14&lt;/b&gt;&lt;br&gt;Display&lt;br&gt;&lt;b&gt;station_obs_enso_indicies&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4860" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-13" source="A13" target="A14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A15" value="&lt;b&gt;A15&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;raw_table&lt;/b&gt; path&lt;br&gt;reload CSV into&lt;br&gt;&lt;b&gt;raw_table_df&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5200" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-14" source="A14" target="A15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A16" value="&lt;b&gt;A16&lt;/b&gt;&lt;br&gt;Define helper functions&lt;br&gt;&lt;b&gt;identify_runs, oni_classify, roni_classify&lt;/b&gt;&lt;br&gt;and 3 unused helpers" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5540" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-15" source="A15" target="A16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A17" value="&lt;b&gt;A17&lt;/b&gt;&lt;br&gt;Call &lt;b&gt;identify_runs&lt;/b&gt;&lt;br&gt;raw_table_df, ONI&lt;br&gt;stores &lt;b&gt;oni_results&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5880" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-16" source="A16" target="A17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A18" value="&lt;b&gt;A18&lt;/b&gt;&lt;br&gt;Call &lt;b&gt;identify_runs&lt;/b&gt;&lt;br&gt;raw_table_df, RONI&lt;br&gt;stores &lt;b&gt;roni_results&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6220" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-17" source="A17" target="A18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A19" value="&lt;b&gt;A19&lt;/b&gt;&lt;br&gt;Attach warm results to&lt;br&gt;&lt;b&gt;raw_table_df&lt;/b&gt;&lt;br&gt;ONI/RONI_episode,&lt;br&gt;_episode_id, _episode_peak" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6560" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-18" source="A18" target="A19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A20" value="&lt;b&gt;A20&lt;/b&gt;&lt;br&gt;Apply strength classifiers to peaks&lt;br&gt;adds &lt;b&gt;ONI_episode_strength&lt;/b&gt;&lt;br&gt;and &lt;b&gt;RONI_episode_strength&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6900" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-19" source="A19" target="A20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A21" value="&lt;b&gt;A21&lt;/b&gt;&lt;br&gt;Round ONI/RONI entries to 1 decimal; classify each&lt;br&gt;adds &lt;b&gt;ONI_monthly_class&lt;/b&gt;&lt;br&gt;and &lt;b&gt;RONI_monthly_class&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7240" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-20" source="A20" target="A21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A22" value="&lt;b&gt;A22&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;index, classify&lt;/b&gt;&lt;br&gt;ONI / oni_classify&lt;br&gt;then RONI / roni_classify" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7580" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-21" source="A21" target="A22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A23" value="&lt;b&gt;A23&lt;/b&gt;&lt;br&gt;Call &lt;b&gt;identify_runs&lt;/b&gt;&lt;br&gt;phase=La Nina&lt;br&gt;stores &lt;b&gt;cold_results&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7920" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-22" source="A22" target="A23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A24" value="&lt;b&gt;A24&lt;/b&gt;&lt;br&gt;Attach cold flag, id, peak&lt;br&gt;and classified strength to&lt;br&gt;&lt;b&gt;raw_table_df&lt;/b&gt;&lt;br&gt;prefix: index_la_nina_" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8260" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-23" source="A23" target="A24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A25" value="&lt;b&gt;A25&lt;/b&gt;&lt;br&gt;Another cold index?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8600" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-24" source="A24" target="A25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A26" value="&lt;b&gt;A26&lt;/b&gt;&lt;br&gt;Display first 20 and 40 cols of&lt;br&gt;&lt;b&gt;raw_table_df&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8940" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-25" source="A25-branch-0" target="A26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A27" value="&lt;b&gt;A27&lt;/b&gt;&lt;br&gt;Parse &lt;b&gt;raw_table_df[time]&lt;/b&gt;&lt;br&gt;as datetime" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9280" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-26" source="A26" target="A27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A28" value="&lt;b&gt;A28&lt;/b&gt;&lt;br&gt;Select Dec, Jan, Feb rows&lt;br&gt;inits &lt;b&gt;djf_obs&lt;/b&gt; copy" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9620" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-27" source="A27" target="A28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A29" value="&lt;b&gt;A29&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;columns&lt;/b&gt;&lt;br&gt;winter_year + warm flags / strengths&lt;br&gt;Select January rows" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9960" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-28" source="A28" target="A29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A30" value="&lt;b&gt;A30&lt;/b&gt;&lt;br&gt;Drop repeated winter_year&lt;br&gt;set index and sort&lt;br&gt;inits &lt;b&gt;winter_table&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10300" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-29" source="A29" target="A30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A31" value="&lt;b&gt;A31&lt;/b&gt;&lt;br&gt;Collect represented DJF years&lt;br&gt;inits &lt;b&gt;all_winters&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10640" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-30" source="A30" target="A31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A32" value="&lt;b&gt;A32&lt;/b&gt;&lt;br&gt;Reindex &lt;b&gt;winter_table&lt;/b&gt;&lt;br&gt;to &lt;b&gt;all_winters&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10980" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-31" source="A31" target="A32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A33" value="&lt;b&gt;A33&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;index&lt;/b&gt;&lt;br&gt;ONI then RONI" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11320" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-32" source="A32" target="A33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A34" value="&lt;b&gt;A34&lt;/b&gt;&lt;br&gt;Read nullable &lt;b&gt;status&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;yes, no, unknown&lt;/b&gt;&lt;br&gt;masks from warm flag" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11660" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-33" source="A33" target="A34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A35" value="&lt;b&gt;A35&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;label_column&lt;/b&gt;&lt;br&gt;index_winter_class&lt;br&gt;Set all labels Unclassified" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12000" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-34" source="A34" target="A35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A36" value="&lt;b&gt;A36&lt;/b&gt;&lt;br&gt;For &lt;b&gt;yes&lt;/b&gt; rows&lt;br&gt;assign warm episode-strength label&lt;br&gt;in &lt;b&gt;winter_table&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12340" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-35" source="A35" target="A36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A37" value="&lt;b&gt;A37&lt;/b&gt;&lt;br&gt;For &lt;b&gt;no&lt;/b&gt; rows&lt;br&gt;assign No El Nino episode at DJF&lt;br&gt;in &lt;b&gt;winter_table&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12680" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-36" source="A36" target="A37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A38" value="&lt;b&gt;A38&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;known_years&lt;/b&gt;&lt;br&gt;Any known years?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13020" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-37" source="A37" target="A38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A39" value="&lt;b&gt;A39&lt;/b&gt;&lt;br&gt;Get &lt;b&gt;start_year, end_year&lt;/b&gt;&lt;br&gt;Print yes / no winter counts" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13360" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-38" source="A38-branch-0" target="A39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A40" value="&lt;b&gt;A40&lt;/b&gt;&lt;br&gt;Print unknown winter count" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13700" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-39" source="A39" target="A40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A41" value="&lt;b&gt;A41&lt;/b&gt;&lt;br&gt;Another index?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14040" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-40" source="A40" target="A41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A42" value="&lt;b&gt;A42&lt;/b&gt;&lt;br&gt;Display&lt;br&gt;&lt;b&gt;winter_table&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14380" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-41" source="A41-branch-0" target="A42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A43" value="&lt;b&gt;A43&lt;/b&gt;&lt;br&gt;Daily &lt;b&gt;djf_obs&lt;/b&gt; and yearly&lt;br&gt;&lt;b&gt;winter_table&lt;/b&gt;&lt;br&gt;ready for weather analysis" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14720" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-42" source="A42" target="A43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A44" value="&lt;b&gt;A44&lt;/b&gt;&lt;br&gt;Continue at &lt;b&gt;B00&lt;/b&gt;&lt;br&gt;tab 2" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="15060" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-43" source="A43" target="A44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-44" source="A25-branch-1" target="A22" value="next index" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="8722.5" y="1010" />
+              <mxPoint x="7702.5" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-45" source="A41-branch-1" target="A33" value="next index" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="14162.5" y="1450" />
+              <mxPoint x="11442.5" y="1450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="no-known" value="Print no winters could be classified" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13360" y="320" width="245" height="130" />
+        </mxCell>
+        <mxCell id="edge-46" source="A38-branch-1" target="no-known" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-47" source="no-known" target="A40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A02-top" value="FIX: these %run calls are active despite the comment. Upstream error stops this path. Index .dt bug is already repaired; manual index inputs and cache-first station reads still need freshness checks." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="765" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-48" source="A02-top" target="A02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A03-bottom" value="note: station notebook still writes NetCDF in current code. CSV-only export is the agreed revision. xarray remains useful in memory." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1105" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-49" source="A03-bottom" target="A03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A05-top" value="FIX: despite its name, this full-index df is never passed to identify_runs. Use the independent index record for detection, before joining weather or trimming to 1950." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1785" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-50" source="A05-top" target="A05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A07-bottom" value="note: station file is 28 cols. With N0 station-day rows, shape is N0 x 28. Missing station-days may still have _q=False; quality status and availability differ." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2465" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-51" source="A07-bottom" target="A07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A08-top" value="note: drops only all-observation-missing rows. Keeps days with just one available variable, including values later rejected by quality masks. Remaining row count = N." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2805" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-52" source="A08-top" target="A08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A11-bottom" value="note: N daily rows remain; monthly values repeat for each station-day. Current index export has 6 cols including row number: merged table is N x 35. Without that artifact it would be N x 34." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3825" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-53" source="A11-bottom" target="A11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A13-top" value="FIX / BUILDOUT: remove accidental Unnamed: 0 from upstream index export. Validate unique station-days, monthly index keys and flag dtypes. This CSV is raw, before the four-variable quality filtering." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4505" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-54" source="A13-top" target="A13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A15-bottom" value="note: reload does not parse dates. time and Date start as strings here. Month reloads as text too. Saved file at A13 does not receive later classification columns." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5185" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-55" source="A15-bottom" target="A15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A16-top" value="note: definitions do not execute their bodies. identify_runs details and classifier thresholds are on tab 3. nbformat is imported but unused." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5525" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-56" source="A16-top" target="A16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A17-bottom" value="note: each helper call reduces N daily rows to M monthly positions, then returns N x 3 mapped daily results. Warm phase is the default." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5865" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-57" source="A17-bottom" target="A17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A20-top" value="VERIFY: strength is the full episode peak, potentially outside DJF or in another year. It is retrospective. Episode IDs represent runs, not unique yearly events." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6885" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-58" source="A20-top" target="A20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A21-bottom" value="note: monthly_class describes a centered three-month entry without persistence. It is separate from the episode classification." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7225" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-59" source="A21-bottom" target="A21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A24-top" value="BUILDOUT: cold episodes already exist. Carry their status / strength through winter_table, grouping, counts and output so La Nina gets its own categories." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8245" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-60" source="A24-top" target="A24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A26-bottom" value="note: adds 18 classification columns overall. Current raw_table_df is N x 53. First-20 / first-40 column displays do not show every new result." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8925" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-61" source="A26-bottom" target="A26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A28-top" value="BUILDOUT: generalize this DJF filter through the entire downstream analysis to DJF, MAM, JJA and SON. Use explicit season + season_year keys." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9605" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-62" source="A28-top" target="A28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A29-bottom" value="note: January centered ONI/RONI represents DJF. One January row per winter supplies class to all stations. Does not require Dec / Jan / Feb centered entries all to qualify." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9945" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-63" source="A29-bottom" target="A29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A30-top" value="FIX: 1950 filter is commented out. Reindex at A32 could restore earlier winters after uncommenting. Detect with full history first, then filter all analysis products consistently." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10285" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-64" source="A30-top" target="A30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A31-bottom" value="BUILDOUT: all_winters only includes DJF years with retained observations somewhere. A full station x season x year calendar is needed for entirely absent seasons." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10625" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-65" source="A31-bottom" target="A31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A32-top" value="note: winter_table is W x 4 before labels, indexed by winter_year. It becomes W x 6 after both indices are labeled. No-January winters can have unknown status." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10965" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-66" source="A32-top" target="A32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A37-bottom" value="FIX: False warm status includes cold, neutral and nonpersistent anomalies. Do not rename this bucket neutral. Define neutral / unknown / provisional handling, then use warm + cold status." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12665" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-67" source="A37-bottom" target="A37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A40-bottom" value="VERIFY: winter counts precede weather completeness checks. Known-year endpoints do not imply continuous coverage. Compare individual year labels with a frozen reference version." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13685" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-68" source="A40-bottom" target="A40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="season-policy" value="&lt;b&gt;BUILDOUT: season / period rules&lt;/b&gt;&lt;br&gt;Current winter_year comes from downloader: Jul-Jun year. The local December-only winter_year helper is unused. Both agree for DJF, but Jul-Jun would split JJA and shift SON.&lt;br&gt;Proposed keys: DJF labeled by Jan/Feb year; MAM/JJA/SON by calendar year. Center months are Jan/Apr/Jul/Oct for these ONI/RONI products; do not average already-overlapping entries again.&lt;br&gt;Resolve whether 1950 onward means season labels &gt;=1950 (DJF includes Dec 1949) or strictly observations dated &gt;=Jan 1 1950. Keep older acquisition / storage intact." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9620" y="1100" width="1300" height="250" />
+        </mxCell>
+        <mxCell id="A25-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8865.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="A25-branch-0-edge" source="A25" target="A25-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A25-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8700.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="A25-branch-1-edge" source="A25" target="A25-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A38-branch-0" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13285.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="A38-branch-0-edge" source="A38" target="A38-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A38-branch-1" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13120.5" y="495.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="A38-branch-1-edge" source="A38" target="A38-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A41-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14305.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="A41-branch-0-edge" source="A41" target="A41-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="A41-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14140.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="A41-branch-1-edge" source="A41" target="A41-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="B" name="2 Weather stats and chart">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Data table builder v0.0 — weather statistics and visualization&lt;/b&gt;&lt;br&gt;Starts from A44: djf_obs daily rows and winter_table yearly classifications. No final table or figure is saved by current code.&lt;br&gt;Current source reviewed October 29, 2026. Yellow notes = proposed fixes / buildouts." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=default;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="30" width="1150" height="150" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Chart key — same shapes as the station chart&lt;/b&gt;&lt;br&gt;Hexagon: general process; step shape: calculation&lt;br&gt;Tape shape: loop; double-border box: decision; diamonds: branch answers&lt;br&gt;Cylinder: table / matrix; white callout: explanation&lt;br&gt;Yellow callout: revision / further thought; variables in bold&lt;br&gt;Numbers identify steps; no notebook-cell references." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=default;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1450" y="30" width="1050" height="150" />
+        </mxCell>
+        <mxCell id="B00" value="&lt;b&gt;B00&lt;/b&gt;&lt;br&gt;Continue from &lt;b&gt;A44&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="B01" value="&lt;b&gt;B01&lt;/b&gt;&lt;br&gt;Copy &lt;b&gt;djf_obs&lt;/b&gt;&lt;br&gt;into &lt;b&gt;mnwx&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-0" source="B00" target="B01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B02" value="&lt;b&gt;B02&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;variable&lt;/b&gt;&lt;br&gt;PRCP, SNOW, TMAX, TMIN" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-1" source="B01" target="B02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B03" value="&lt;b&gt;B03&lt;/b&gt;&lt;br&gt;Keep value only where&lt;br&gt;&lt;b&gt;mnwx[variable_q] == False&lt;/b&gt;&lt;br&gt;otherwise set value missing" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-2" source="B02" target="B03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B04" value="&lt;b&gt;B04&lt;/b&gt;&lt;br&gt;Another variable?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-3" source="B03" target="B04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B05" value="&lt;b&gt;B05&lt;/b&gt;&lt;br&gt;Add &lt;b&gt;precip_in&lt;/b&gt; and &lt;b&gt;snow_in&lt;/b&gt;&lt;br&gt;PRCP / 25.4&lt;br&gt;SNOW / 25.4" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-4" source="B04-branch-0" target="B05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B06" value="&lt;b&gt;B06&lt;/b&gt;&lt;br&gt;Add &lt;b&gt;temp_f&lt;/b&gt;&lt;br&gt;((TMAX + TMIN) / 2)&lt;br&gt;* 9/5 + 32" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2140" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-5" source="B05" target="B06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B07" value="&lt;b&gt;B07&lt;/b&gt;&lt;br&gt;Group &lt;b&gt;mnwx&lt;/b&gt;&lt;br&gt;by station, winter_year&lt;br&gt;inits &lt;b&gt;station_winters&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2480" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-6" source="B06" target="B07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B08" value="&lt;b&gt;B08&lt;/b&gt;&lt;br&gt;Aggregate seasonal metrics&lt;br&gt;&lt;b&gt;precip_in, snow_in&lt;/b&gt;: sum(min_count=1)&lt;br&gt;&lt;b&gt;temp_f&lt;/b&gt;: daily mean" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2820" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-7" source="B07" target="B08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B09" value="&lt;b&gt;B09&lt;/b&gt;&lt;br&gt;Count usable days&lt;br&gt;&lt;b&gt;precip_days, snow_days,&lt;br&gt;temp_days&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3160" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-8" source="B08" target="B09" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B10" value="&lt;b&gt;B10&lt;/b&gt;&lt;br&gt;Read winter years into &lt;b&gt;years&lt;/b&gt;&lt;br&gt;Calculate &lt;b&gt;expected_days&lt;/b&gt;&lt;br&gt;90 + leap-year indicator" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3500" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-9" source="B09" target="B10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B11" value="&lt;b&gt;B11&lt;/b&gt;&lt;br&gt;Select next metric / count / missing column&lt;br&gt;precip, snow, temp" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3840" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-10" source="B10" target="B11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B12" value="&lt;b&gt;B12&lt;/b&gt;&lt;br&gt;Add metric missing-day column&lt;br&gt;&lt;b&gt;expected_days - valid count&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4180" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-11" source="B11" target="B12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B13" value="&lt;b&gt;B13&lt;/b&gt;&lt;br&gt;Keep metric only where&lt;br&gt;&lt;b&gt;count == expected_days&lt;/b&gt;&lt;br&gt;otherwise replace with NaN" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4520" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-12" source="B12" target="B13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B14" value="&lt;b&gt;B14&lt;/b&gt;&lt;br&gt;Another metric?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4860" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-13" source="B13" target="B14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B15" value="&lt;b&gt;B15&lt;/b&gt;&lt;br&gt;Join ONI / RONI winter classes&lt;br&gt;into &lt;b&gt;station_winters&lt;/b&gt;&lt;br&gt;inner on winter_year&lt;br&gt;validate many_to_one" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5200" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-14" source="B14-branch-0" target="B15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B16" value="&lt;b&gt;B16&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;classification&lt;/b&gt; order&lt;br&gt;very strong, strong, moderate,&lt;br&gt;weak El Nino, no El Nino&lt;br&gt;inits &lt;b&gt;summaries = {}&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5540" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-15" source="B15" target="B16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B17" value="&lt;b&gt;B17&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;index&lt;/b&gt;&lt;br&gt;ONI then RONI&lt;br&gt;inits &lt;b&gt;classification_column&lt;/b&gt;" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5880" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-16" source="B16" target="B17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B18" value="&lt;b&gt;B18&lt;/b&gt;&lt;br&gt;Group by station + class&lt;br&gt;mean of accepted winter metrics&lt;br&gt;inits &lt;b&gt;station_averages&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6220" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-17" source="B17" target="B18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B19" value="&lt;b&gt;B19&lt;/b&gt;&lt;br&gt;Group station means by class&lt;br&gt;mean, then reindex categories&lt;br&gt;inits &lt;b&gt;summary&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6560" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-18" source="B18" target="B19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B20" value="&lt;b&gt;B20&lt;/b&gt;&lt;br&gt;Add &lt;b&gt;summary[winter_count]&lt;/b&gt;&lt;br&gt;value_counts from winter_table&lt;br&gt;fill absent categories with 0" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6900" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-19" source="B19" target="B20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B21" value="&lt;b&gt;B21&lt;/b&gt;&lt;br&gt;Store &lt;b&gt;summaries[index]&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7240" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-20" source="B20" target="B21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B22" value="&lt;b&gt;B22&lt;/b&gt;&lt;br&gt;Another index?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7580" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-21" source="B21" target="B22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B23" value="&lt;b&gt;B23&lt;/b&gt;&lt;br&gt;Assign &lt;b&gt;roni_summary&lt;/b&gt;&lt;br&gt;and &lt;b&gt;oni_summary&lt;/b&gt;&lt;br&gt;from summaries" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7920" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-22" source="B22-branch-0" target="B23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B24" value="&lt;b&gt;B24&lt;/b&gt;&lt;br&gt;Display both summaries" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8260" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-23" source="B23" target="B24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B25" value="&lt;b&gt;B25&lt;/b&gt;&lt;br&gt;Copy RONI cells to named&lt;br&gt;presentation scalars&lt;br&gt;5 categories x 4 metrics" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8600" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-24" source="B24" target="B25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B26" value="&lt;b&gt;B26&lt;/b&gt;&lt;br&gt;Copy ONI cells to named&lt;br&gt;presentation scalars&lt;br&gt;4 categories x 4 metrics" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8940" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-25" source="B25" target="B26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B27" value="&lt;b&gt;B27&lt;/b&gt;&lt;br&gt;Select RONI display columns&lt;br&gt;inits &lt;b&gt;roni_plot_table&lt;/b&gt;&lt;br&gt;winter_count, temp_f,&lt;br&gt;precip_in, snow_in" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9280" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-26" source="B26" target="B27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B28" value="&lt;b&gt;B28&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;titles&lt;/b&gt;&lt;br&gt;count with 1905-2026 heading&lt;br&gt;plus weather column labels" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9620" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-27" source="B27" target="B28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B29" value="&lt;b&gt;B29&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;amplitudes&lt;/b&gt;&lt;br&gt;maps categories to codes 4..0&lt;br&gt;inits &lt;b&gt;rows&lt;/b&gt; from summary index&lt;br&gt;Print mappings" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9960" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-28" source="B28" target="B29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B30" value="&lt;b&gt;B30&lt;/b&gt;&lt;br&gt;Repeat each code across cols&lt;br&gt;inits &lt;b&gt;roni_colors&lt;/b&gt;&lt;br&gt;Print color matrix" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10300" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-29" source="B29" target="B30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B31" value="&lt;b&gt;B31&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;amp_colors&lt;/b&gt;&lt;br&gt;ListedColormap&lt;br&gt;gray + four reds" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10640" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-30" source="B30" target="B31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B32" value="&lt;b&gt;B32&lt;/b&gt;&lt;br&gt;Create &lt;b&gt;fig, ax&lt;/b&gt;&lt;br&gt;12 x 3.5 inches&lt;br&gt;imshow roni_colors&lt;br&gt;fixed color limits, auto aspect" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10980" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-31" source="B31" target="B32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B33" value="&lt;b&gt;B33&lt;/b&gt;&lt;br&gt;Set column ticks / &lt;b&gt;titles&lt;/b&gt;&lt;br&gt;labels above table&lt;br&gt;hide bottom labels" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11320" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-32" source="B32" target="B33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B34" value="&lt;b&gt;B34&lt;/b&gt;&lt;br&gt;Set row ticks / category labels&lt;br&gt;axis label: El Nino Amplitude" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="11660" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-33" source="B33" target="B34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B35" value="&lt;b&gt;B35&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;row&lt;/b&gt;&lt;br&gt;0 to 4" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12000" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-34" source="B34" target="B35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B36" value="&lt;b&gt;B36&lt;/b&gt;&lt;br&gt;Select next &lt;b&gt;col&lt;/b&gt;&lt;br&gt;0 to 3" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12340" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-35" source="B35" target="B36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B37" value="&lt;b&gt;B37&lt;/b&gt;&lt;br&gt;Read &lt;b&gt;value&lt;/b&gt;&lt;br&gt;roni_plot_table.iloc[row, col]" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="12680" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-36" source="B36" target="B37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B38" value="&lt;b&gt;B38&lt;/b&gt;&lt;br&gt;Format &lt;b&gt;label&lt;/b&gt;&lt;br&gt;missing: dash&lt;br&gt;count: integer&lt;br&gt;weather: one decimal" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13020" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-37" source="B37" target="B38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B39" value="&lt;b&gt;B39&lt;/b&gt;&lt;br&gt;Write &lt;b&gt;ax.text&lt;/b&gt;&lt;br&gt;centered bold black label&lt;br&gt;at col, row" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13360" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-38" source="B38" target="B39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B40" value="&lt;b&gt;B40&lt;/b&gt;&lt;br&gt;Another column?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13700" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-39" source="B39" target="B40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B41" value="&lt;b&gt;B41&lt;/b&gt;&lt;br&gt;Another row?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14040" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-40" source="B40-branch-0" target="B41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B42" value="&lt;b&gt;B42&lt;/b&gt;&lt;br&gt;Set minor ticks at cell edges&lt;br&gt;Draw white grid lines&lt;br&gt;Hide minor tick marks" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14380" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-41" source="B41-branch-0" target="B42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B43" value="&lt;b&gt;B43&lt;/b&gt;&lt;br&gt;Set title&lt;br&gt;Winter Weather by&lt;br&gt;El Nino Strength - RONI" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14720" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-42" source="B42" target="B43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B44" value="&lt;b&gt;B44&lt;/b&gt;&lt;br&gt;Tighten layout&lt;br&gt;&lt;b&gt;plt.tight_layout()&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="15060" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-43" source="B43" target="B44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B45" value="&lt;b&gt;B45&lt;/b&gt;&lt;br&gt;Display figure&lt;br&gt;&lt;b&gt;plt.show()&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="15400" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-44" source="B44" target="B45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B46" value="&lt;b&gt;B46&lt;/b&gt;&lt;br&gt;End" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="15740" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-45" source="B45" target="B46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-46" source="B04-branch-1" target="B02" value="next item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1582.5" y="1010" />
+              <mxPoint x="902.5" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-47" source="B14-branch-1" target="B11" value="next item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="4982.5" y="1010" />
+              <mxPoint x="3962.5" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-48" source="B22-branch-1" target="B17" value="next item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="7702.5" y="1010" />
+              <mxPoint x="6002.5" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-49" source="B40-branch-1" target="B36" value="next item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="13822.5" y="1010" />
+              <mxPoint x="12462.5" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-50" source="B41-branch-1" target="B35" value="next item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="14162.5" y="1450" />
+              <mxPoint x="12122.5" y="1450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B01-top" value="note: D = retained DJF station-days. mnwx begins D x 53; conversions add 3 cols to make D x 56. Quality filtering changes values without dropping these daily rows." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="425" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-51" source="B01-top" target="B01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B03-bottom" value="note: missing or rejected values cannot contribute. _q=False means no rejection flag recorded; it does not guarantee the measurement exists." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1105" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-52" source="B03-bottom" target="B03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B06-top" value="note: both TMAX and TMIN must exist. This estimates daily temperature from extremes; it is not an hourly mean. Daily averaging already weights the different month lengths correctly." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2125" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-53" source="B06-top" target="B06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B07-bottom" value="note: K represented station-winters replace D daily rows. station and winter_year become two index levels. Six aggregates = K x 6 data columns, before missing counts and classes." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2465" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-54" source="B07-bottom" target="B07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B08-top" value="note: precip / snow are summed within each winter, then winter totals are averaged later. min_count=1 prevents an entirely missing group from appearing as zero." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2805" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-55" source="B08-top" target="B08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B10-bottom" value="BUILDOUT: generalize expected days using actual season boundaries: DJF 90/91, MAM 92, JJA 92, SON 91. Keep daily averaging, or day-weight any monthly intermediate." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3485" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-56" source="B10-bottom" target="B10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B12-top" value="BUILDOUT: existing missing-day counts combine missing and quality-rejected measurements. Report those separately, with expected, raw, rejected and usable counts." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4165" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-57" source="B12-top" target="B12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B13-bottom" value="note: strict completeness applies separately to each metric. One missing / rejected day removes that seasonal metric. Other metrics from the same station-winter can remain valid." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4505" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-58" source="B13-bottom" target="B13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B15-top" value="note: station_winters is K x 11 after join: 3 metrics + 3 valid counts + 3 missing counts + 2 classes, indexed by station / winter_year. Inner join retains only class-table matches." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5185" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-59" source="B15-top" target="B15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B16-bottom" value="FIX: include separate La Nina / neutral categories and explicitly account for unknown / provisional seasons. Current reindex excludes Unclassified from final summary." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5525" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-60" source="B16-bottom" target="B16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B18-top" value="note: station_averages is G x 3; index levels are station + category. Means skip missing metrics separately. Accepted winters get equal weight, including 90- and 91-day DJFs. G = represented station-category pairs." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6205" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-61" source="B18-top" target="B18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B19-bottom" value="VERIFY: equal weight per available station mean, even if accepted year counts differ. Define ensemble membership, weighting and matched-period comparisons; 9 stations include sites outside MN." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6545" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-62" source="B19-bottom" target="B19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B20-top" value="FIX: winter_count counts classified years, not valid weather samples. Report accepted/excluded winters per metric and contributing station counts beside the displayed counts." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="6885" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-63" source="B20-top" target="B20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B23-bottom" value="note: each summary is 5 x 4: precip_in, snow_in, temp_f, winter_count. ONI cannot populate the very-strong row under its current classifier." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7905" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-64" source="B23-bottom" target="B23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B25-top" value="note: scalar families avg_djf_*_precip_roni, djf_*_snowfall_total_roni, avg_djf_*_temp_roni, ndjf_*_roni. Prefix groups: vsen, sen, men, wen, nenso. 20 scalars; not used by plot." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8585" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-65" source="B25-top" target="B25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B26-bottom" value="note: same 4 scalar families with _oni suffix for sen, men, wen, nenso = 16 scalars. These copy cells; they do not calculate new statistics." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="8925" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-66" source="B26-bottom" target="B26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B27-top" value="BUILDOUT: final plot uses RONI only. Keep ONI available separately. No TNI threshold / agreement classifier is used. Add all required season and station variants through shared table logic." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9265" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-67" source="B27-top" target="B27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B28-bottom" value="FIX: derive period labels from actual selected / valid coverage. The 1905-2026 heading is hard-coded and can disagree with winter counts." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9605" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-68" source="B28-bottom" target="B28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B30-top" value="note: rows is length 5; rows[:, None] is 5 x 1; repeating across 4 columns makes roni_colors 5 x 4. roni_plot_table is also 5 x 4. Colors encode category, not weather magnitude." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10285" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-69" source="B30-top" target="B30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B32-bottom" value="note: fig size is physical inches. It is separate from the 5 x 4 data and color matrix dimensions." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="10965" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-70" source="B32-bottom" target="B32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B38-top" value="note: this conditional formats all 20 cells. Dash means missing. Integer / one-decimal formatting is presentation, not a calculated uncertainty estimate." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13005" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-71" source="B38-top" target="B38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B45-bottom" value="BUILDOUT: current code only displays. Save numerical tables, coverage / SD products and figures. Clean-run regenerated outputs are needed; saved notebook displays may be stale." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="15385" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-72" source="B45-bottom" target="B45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="sd" value="&lt;b&gt;BUILDOUT: SD and sample sizes&lt;/b&gt;&lt;br&gt;No SD is calculated. Define it before coding: for each station / index / season / category, sample SD across accepted seasonal values is one candidate (ddof=1; missing if n&lt;2).&lt;br&gt;For ensembles, distinguish year-to-year variability of the ensemble series from spread among station means. Do not average station SDs to get ensemble SD.&lt;br&gt;Expose missing-day columns and report accepted / excluded season counts per metric. A complete station x season x year grid must include wholly absent periods." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3840" y="1100" width="1250" height="250" />
+        </mxCell>
+        <mxCell id="kenny" value="&lt;b&gt;REQUIRED CHECKPOINT: exact Kenny table first&lt;/b&gt;&lt;br&gt;When implementing the reference output, ASK USER AGAIN to define variables, formulas, row / column layout, periods, geography, units, rounding, index version and appearance. This chart is not that approval.&lt;br&gt;Match the correct statewide / MSP source and weather window. DJF snowfall differs from a full snow-season total; a nine-station ensemble is not automatically a statewide average.&lt;br&gt;Validate and SAVE the exact reference table first. Then duplicate for every station individually, then build ensemble tables with the agreed weighting, SD and coverage outputs." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="9280" y="1100" width="1400" height="250" />
+        </mxCell>
+        <mxCell id="final-validation" value="&lt;b&gt;VERIFY before phase-one completion&lt;/b&gt;&lt;br&gt;Restart and run from frozen inputs. Check 1950 boundaries, seasonal keys, leap days, rounding / persistence, unknowns, whole absent seasons and quality handling.&lt;br&gt;Confirm any donor splices actually exist and retain provenance; the investigation notebook alone does not apply replacements.&lt;br&gt;These are descriptive weather means. SD is variability, not automatically confidence limits or evidence of causal ENSO effects. Nearby stations and episode-linked years are dependent." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14380" y="1100" width="1250" height="250" />
+        </mxCell>
+        <mxCell id="B04-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1725.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B04-branch-0-edge" source="B04" target="B04-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B04-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1560.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B04-branch-1-edge" source="B04" target="B04-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B14-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5125.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B14-branch-0-edge" source="B14" target="B14-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B14-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4960.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B14-branch-1-edge" source="B14" target="B14-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B22-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7845.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B22-branch-0-edge" source="B22" target="B22-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B22-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="7680.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B22-branch-1-edge" source="B22" target="B22-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B40-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13965.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B40-branch-0-edge" source="B40" target="B40-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B40-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="13800.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B40-branch-1-edge" source="B40" target="B40-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B41-branch-0" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14305.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B41-branch-0-edge" source="B41" target="B41-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="B41-branch-1" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="14140.5" y="705.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="B41-branch-1-edge" source="B41" target="B41-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="H" name="3 Episode helper and definitions">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;identify_runs — helper called from A17, A18 and A23&lt;/b&gt;&lt;br&gt;Defined in cell 11, executed only at calls. Local classifiers are detailed below; monthly helper arrays use M positions and return N daily rows.&lt;br&gt;Current source reviewed October 29, 2026. Yellow notes = proposed fixes / buildouts." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=default;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="30" width="1150" height="150" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Chart key — same shapes as the station chart&lt;/b&gt;&lt;br&gt;Hexagon: general process; step shape: calculation&lt;br&gt;Tape shape: loop; double-border box: decision; diamonds: branch answers&lt;br&gt;Cylinder: table / matrix; white callout: explanation&lt;br&gt;Yellow callout: revision / further thought; variables in bold&lt;br&gt;Numbers identify steps; no notebook-cell references." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=default;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1450" y="30" width="1050" height="150" />
+        </mxCell>
+        <mxCell id="H00" value="&lt;b&gt;H00&lt;/b&gt;&lt;br&gt;Enter &lt;b&gt;identify_runs&lt;/b&gt;&lt;br&gt;df, index_column,&lt;br&gt;phase defaults El Nino" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="H01" value="&lt;b&gt;H01&lt;/b&gt;&lt;br&gt;Is &lt;b&gt;phase&lt;/b&gt; El Nino&lt;br&gt;or La Nina?" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-0" source="H00" target="H01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H02" value="&lt;b&gt;H02&lt;/b&gt;&lt;br&gt;Make &lt;b&gt;months&lt;/b&gt;&lt;br&gt;datetime df[time]&lt;br&gt;to monthly periods" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-1" source="H01-branch-0" target="H02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H03" value="&lt;b&gt;H03&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;monthly&lt;/b&gt;&lt;br&gt;Month and value from&lt;br&gt;df[index_column]" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1120" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-2" source="H02" target="H03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H04" value="&lt;b&gt;H04&lt;/b&gt;&lt;br&gt;Drop duplicate Month&lt;br&gt;keep first; set Month index&lt;br&gt;sort into &lt;b&gt;index_series&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-3" source="H03" target="H04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H05" value="&lt;b&gt;H05&lt;/b&gt;&lt;br&gt;Reindex &lt;b&gt;index_series&lt;/b&gt;&lt;br&gt;continuous period_range&lt;br&gt;min to max month" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1800" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-4" source="H04" target="H05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H06" value="&lt;b&gt;H06&lt;/b&gt;&lt;br&gt;Round &lt;b&gt;index_series&lt;/b&gt;&lt;br&gt;to one decimal" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2140" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-5" source="H05" target="H06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H07" value="&lt;b&gt;H07&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;qualifying&lt;/b&gt;&lt;br&gt;warm: value &gt;= +0.5&lt;br&gt;cold: value &lt;= -0.5" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2480" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-6" source="H06" target="H07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H08" value="&lt;b&gt;H08&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;window_ends&lt;/b&gt;&lt;br&gt;5-position rolling sum&lt;br&gt;equals 5" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2820" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-7" source="H07" target="H08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H09" value="&lt;b&gt;H09&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;episode&lt;/b&gt;&lt;br&gt;OR window_ends and shifts&lt;br&gt;-1, -2, -3, -4" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3160" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-8" source="H08" target="H09" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H10" value="&lt;b&gt;H10&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;episode_start&lt;/b&gt;&lt;br&gt;episode AND NOT previous episode" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3500" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-9" source="H09" target="H10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H11" value="&lt;b&gt;H11&lt;/b&gt;&lt;br&gt;inits &lt;b&gt;episode_id&lt;/b&gt;&lt;br&gt;cumulative start count&lt;br&gt;Int64; keep only episode positions" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3840" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-10" source="H10" target="H11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H12" value="&lt;b&gt;H12&lt;/b&gt;&lt;br&gt;Choose &lt;b&gt;extreme&lt;/b&gt;&lt;br&gt;warm max / cold min&lt;br&gt;group by episode_id&lt;br&gt;transform to &lt;b&gt;episode_peak&lt;/b&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4180" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-11" source="H11" target="H12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H13" value="&lt;b&gt;H13&lt;/b&gt;&lt;br&gt;Convert &lt;b&gt;episode&lt;/b&gt;&lt;br&gt;to nullable Boolean&lt;br&gt;mask missing index values as NA" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4520" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-12" source="H12" target="H13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H14" value="&lt;b&gt;H14&lt;/b&gt;&lt;br&gt;Return dataframe&lt;br&gt;map episode / id / peak&lt;br&gt;to original &lt;b&gt;months&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4860" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-13" source="H13" target="H14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H15" value="&lt;b&gt;H15&lt;/b&gt;&lt;br&gt;Return to caller&lt;br&gt;A17 / A18 / A23" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="5200" y="560" width="245" height="120" />
+        </mxCell>
+        <mxCell id="edge-14" source="H14" target="H15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="invalid" value="Raise ValueError&lt;br&gt;Exit this call with exception" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="780" y="290" width="245" height="130" />
+        </mxCell>
+        <mxCell id="edge-15" source="H01-branch-1" target="invalid" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H03-bottom" value="note: monthly starts N x 2, one row for each retained station-day. This is repeated monthly information, not N independent index observations." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1105" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-16" source="H03-bottom" target="H03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H04-top" value="FIX: keeping the first station-day value for each month assumes all repeated values agree. Validate that assumption and derive episodes directly from full index inputs." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1445" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-17" source="H04-top" target="H04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H05-bottom" value="note: M x 1 series with monthly-period index. Missing calendar positions become NaN. A month absent from all retained station-days remains missing, even if the source index file contains it." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1785" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-18" source="H05-bottom" target="H05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H06-top" value="VERIFY: rounding can move borderline entries across thresholds and alters episode peaks. Compare year-by-year classifications against the same source / version." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2125" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-19" source="H06-top" target="H06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H08-bottom" value="note: 5 consecutive entries of an already-centered 3-month product. No new running average is computed. Missing values fail the threshold test." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2805" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-20" source="H08-bottom" target="H08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H09-top" value="note: shifts mark every member of each valid 5-entry window. Overlapping windows join into one episode. An episode may span several seasons or winters." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3145" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-21" source="H09-top" target="H09" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H11-bottom" value="note: ID is unique per detected run within this index / phase call, not per yearly event. ONI warm, RONI warm and cold IDs are separate namespaces." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3825" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-22" source="H11-bottom" target="H11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H13-top" value="VERIFY: only missing-input positions get NA status. Adjacent observed months / record edges can still be False if a five-entry episode cannot be confirmed. Define provisional handling." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4505" y="290" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-23" source="H13-top" target="H13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H14-bottom" value="note: monthly series map back to N positions. Return is N x 3 with episode, episode_id, episode_peak. Daily row order is preserved; the input dataframe is not mutated here." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="4845" y="750" width="275" height="190" />
+        </mxCell>
+        <mxCell id="edge-24" source="H14-bottom" target="H14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=12;dashed=1;endArrow=none;strokeColor=default;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="oni" value="&lt;b&gt;oni_classify(value) — definition, called on rounded entries or episode peaks&lt;/b&gt;&lt;br&gt;Missing -&gt; NA&lt;br&gt;Strong El Nino: value &gt;=1.5&lt;br&gt;Moderate El Nino: 1.0 &lt;= value &lt;=1.4&lt;br&gt;Weak El Nino: 0.5 &lt;= value &lt;=0.9&lt;br&gt;Neutral: -0.5 &lt; value &lt;0.5&lt;br&gt;Weak La Nina: -0.9 &lt;= value &lt;=-0.5&lt;br&gt;Moderate La Nina: -1.4 &lt;= value &lt;=-1.0&lt;br&gt;Strong La Nina: value &lt;=-1.5&lt;br&gt;Else: Unclassified strength. No very-strong ONI class." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="100" y="1100" width="1300" height="250" />
+        </mxCell>
+        <mxCell id="roni" value="&lt;b&gt;roni_classify(value) — ordered threshold checks&lt;/b&gt;&lt;br&gt;Missing -&gt; NA&lt;br&gt;Very strong El Nino: &gt;=2.0; strong: [1.5,2.0)&lt;br&gt;Moderate El Nino: [1.0,1.5); weak: [0.5,1.0)&lt;br&gt;Neutral: (-0.5,0.5)&lt;br&gt;Weak La Nina: (-1.0,-0.5]; moderate: (-1.5,-1.0]&lt;br&gt;Strong La Nina: (-2.0,-1.5]; very strong: &lt;=-2.0&lt;br&gt;These strength functions do not themselves test persistence.&lt;br&gt;ONI strong and RONI strong cover different ranges; compare categories under explicitly matched definitions." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1600" y="1100" width="1300" height="250" />
+        </mxCell>
+        <mxCell id="unused" value="&lt;b&gt;Defined but unused later in this notebook&lt;/b&gt;&lt;br&gt;winter_year(date): December -&gt; next year; other months -&gt; current year. It does not replace the downloader's existing winter_year column.&lt;br&gt;identify_ninos(df,index): select True warm episode rows.&lt;br&gt;indentify_non_ninos(df,index): select False warm episode rows; unknown rows excluded.&lt;br&gt;Neither selector is called in the current analysis. Do not diagram these as active filters." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=default;strokeColor=default;fillColor=default;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="3100" y="1100" width="1300" height="250" />
+        </mxCell>
+        <mxCell id="H01-branch-0" value="Yes" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="705.0" y="598.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="H01-branch-0-edge" source="H01" target="H01-branch-0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="H01-branch-1" value="No" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fontColor=default;strokeColor=default;fillColor=default;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="540.5" y="495.0" width="44" height="44" />
+        </mxCell>
+        <mxCell id="H01-branch-1-edge" source="H01" target="H01-branch-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=default;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
