@@ -3,7 +3,7 @@ numpy
 xarray
 tqdm
 matplotlib
-NetCDF4
 pathlib
 ipykernel
 nbformat
+hashlib
