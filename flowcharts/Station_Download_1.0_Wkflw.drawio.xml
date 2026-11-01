@@ -1,14 +1,13 @@
-<?xml version='1.0' encoding='utf-8'?>
 <mxfile host="app.diagrams.net" compressed="false">
   <diagram name="Page-1" id="PKpB6A2LshsjVRmyTN-3">
-    <mxGraphModel dx="4370" dy="3009" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="816" dy="1736" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="YBhsTPMUBiwthjwb7pRI-2" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Vertical Container" vertex="1">
           <mxGeometry height="221" width="260" x="441" y="128" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-3" parent="YBhsTPMUBiwthjwb7pRI-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="This pipeline collects daily observations and quality flags for selected stations and saved outputs as a csv.&amp;nbsp;&lt;div&gt;The scope is NOT just Minnesota there are stations samples outside of MN boundary. &lt;u&gt;This needs to be fixed in notebook descriptions&lt;/u&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-3" parent="YBhsTPMUBiwthjwb7pRI-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="This pipeline collects daily observations and quality flags for selected stations and saved outputs as a csv.&amp;nbsp;&lt;div&gt;The scope is NOT just Minnesota there are stations samples outside of MN boundary.&amp;nbsp;&lt;/div&gt;" vertex="1">
           <mxGeometry height="136" width="190" x="35" y="42.5" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-3" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-7">
@@ -35,7 +34,7 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-51" parent="1" style="shape=wedgeCallout;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="Chanhassen and little fork need to be spliced in. I think step one of that is making a list of donor_stations" vertex="1">
           <mxGeometry height="80" width="124" x="1639" y="81" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-49" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;note: assumes execution from 'scripts'&lt;/span&gt;" vertex="1">
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-49" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;note: assumes execution from &#39;scripts&#39;&lt;/span&gt;" vertex="1">
           <mxGeometry height="80" width="120" x="1140" y="118.5" as="geometry" />
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-39" collapsed="1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="USW000149{id} name" vertex="1">
@@ -111,9 +110,9 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-70" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;4&lt;/b&gt; &amp;nbsp; inits a list of &lt;b&gt;target_vars&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="120" x="1803" y="198.5" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-71" collapsed="1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="GHCNd Var, description(unit)" vertex="1">
-          <mxGeometry height="30" width="248" x="1739" y="278.5" as="geometry">
-            <mxRectangle height="360" width="298" x="1739" y="278.5" as="alternateBounds" />
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-71" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="GHCNd Var, description(unit)" vertex="1">
+          <mxGeometry height="360" width="298" x="1739" y="278.5" as="geometry">
+            <mxRectangle height="30" width="248" x="1739" y="278.5" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-72" parent="YBhsTPMUBiwthjwb7pRI-71" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="TMAX, max daily temp(C*10)" vertex="1">
@@ -157,9 +156,6 @@
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-85" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;5&lt;/b&gt; &amp;nbsp; defines units &amp;amp; conversion factor&amp;nbsp; &amp;nbsp; &amp;nbsp;-&amp;gt;unit=intval*0.1" vertex="1">
           <mxGeometry height="80" width="120" x="2025" y="198.5" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-86" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="output metadata incorrectly says DAVARs are in mm should be days" vertex="1">
-          <mxGeometry height="90" width="131" x="2054" y="108.5" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-9" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-98">
           <mxGeometry relative="1" as="geometry" />
@@ -255,12 +251,6 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-133" parent="YBhsTPMUBiwthjwb7pRI-129" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;station_names&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="140" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-134" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="need to make sure to keep metadata and array rows aligned even when station cannot be loaded" vertex="1">
-          <mxGeometry height="106.5" width="120" x="3184" y="92" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-137" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="These arrays allow for an unfufilled observation, nan with a false quality flag, meaning the obs is not discarded later when filtered by quality flag.&lt;div&gt;These arrays also reserve space for all 9 stations. If a download fails and the station is skipped the later metedata lists can have fewer entires than the arrays (because dim calc)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="187" width="187" x="2922.5" y="-148" as="geometry" />
-        </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-18" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-140" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -276,7 +266,7 @@
         <mxCell id="WcriJxCStyfXSmQ5elGc-22" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-141" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-144" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-141" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;15&lt;/b&gt; &amp;nbsp; inits&amp;nbsp; remote source&lt;div&gt;&lt;b&gt;url&lt;/b&gt;=f'link/{fullid}.csv'&lt;/div&gt;" vertex="1">
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-141" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;15&lt;/b&gt; &amp;nbsp; inits&amp;nbsp; remote source&lt;div&gt;&lt;b&gt;url&lt;/b&gt;=f&#39;link/{fullid}.csv&#39;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="120" x="3874" y="198.5" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-21" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-142" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-141" value="">
@@ -324,14 +314,8 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-147" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;17&lt;/b&gt; &amp;nbsp; Read cached CSV&lt;br&gt;into &lt;b&gt;df&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="160" x="5152" y="71" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-148" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this decision needs an explicit refresh option/check" vertex="1">
-          <mxGeometry height="80" width="120" x="4200" y="125.75" as="geometry" />
-        </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-149" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="descision" vertex="1">
           <mxGeometry height="60" width="120" x="796" y="-224" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-151" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this could be as simple as deleting old data before each run" vertex="1">
-          <mxGeometry height="80" width="120" x="4195" y="45.75" as="geometry" />
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-158" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this read is outside the coded exception handler meaning an unreadbale or malformed cached file can stop execution but I dont think this is an issue because it executes properly" vertex="1">
           <mxGeometry height="177" width="130" x="4583" y="-106" as="geometry" />
@@ -348,9 +332,6 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-160" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;21&lt;/b&gt; &amp;nbsp; Extract from first row of &lt;b&gt;df&lt;/b&gt;:&lt;br&gt;&lt;b&gt;lat, lon, name&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="180" x="5390" y="71" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-161" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="skipping a stationleaves it preaoocated array row in place which can cause dimension mismatch" vertex="1">
-          <mxGeometry height="131" width="120" x="4947" y="477" as="geometry" />
-        </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-188" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-162" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="YBhsTPMUBiwthjwb7pRI-160" value="Yes">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
@@ -365,23 +346,13 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-162" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&lt;b&gt;19&lt;/b&gt; &amp;nbsp; does the atempted data download work?" vertex="1">
           <mxGeometry height="60" width="120" x="4777" y="257" as="geometry" />
         </mxCell>
-        <mxCell id="WcriJxCStyfXSmQ5elGc-29" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-163" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-164" value="">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="WcriJxCStyfXSmQ5elGc-29" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-163" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="-f6CNqkNCMGj1yxwzB-q-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="5007" y="408" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-163" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="no" vertex="1">
           <mxGeometry height="80" width="80" x="4967" y="247" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-164" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;20&lt;/b&gt; &amp;nbsp; prints error message and advance to the next station" vertex="1">
-          <mxGeometry height="80" width="120" x="4947" y="397" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-169" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="Need to chose a consistent failure handling rule" vertex="1">
-          <mxGeometry height="80" width="80" x="4496" y="231" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-170" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="empty file or missing metedata can fail here but i dont think that is happening" vertex="1">
-          <mxGeometry height="97" width="130" x="5165" y="-26" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-171" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="you can be sure by validating the dataframes rows and required columns before accessing the first row" vertex="1">
-          <mxGeometry height="121" width="125" x="5165" y="-147" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-34" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-172" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-174" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -389,23 +360,20 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-172" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;22&lt;/b&gt; &amp;nbsp; Parse &lt;b&gt;df[DATE]&lt;/b&gt;&lt;br&gt;as datetime;&lt;br&gt;invalid values become NaT" vertex="1">
           <mxGeometry height="80" width="160" x="5641" y="71" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-173" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="should count and report invalid dates" vertex="1">
-          <mxGeometry height="80" width="120" x="5655" y="-9" as="geometry" />
+        <mxCell id="-f6CNqkNCMGj1yxwzB-q-8" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-174" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="-f6CNqkNCMGj1yxwzB-q-7">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-174" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;23&lt;/b&gt; &amp;nbsp; drops rows with invalid dates" vertex="1">
           <mxGeometry height="80" width="160" x="5865" y="71" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-175" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="double check that these dates are actually unusable and not just formated weird" vertex="1">
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-175" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="note; User may want to inspect discarded dates" vertex="1">
           <mxGeometry height="84.5" width="130" x="5885" y="-13.5" as="geometry" />
         </mxCell>
-        <mxCell id="WcriJxCStyfXSmQ5elGc-35" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-176" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-178" value="">
+        <mxCell id="-f6CNqkNCMGj1yxwzB-q-11" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-176" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="-f6CNqkNCMGj1yxwzB-q-10" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-176" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;24&lt;/b&gt; &amp;nbsp; removes duplicate dates" vertex="1">
-          <mxGeometry height="80" width="120" x="6065" y="71" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-177" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="should distinguish identical duplicates BUT i think ghcnd does this before i get to it" vertex="1">
-          <mxGeometry height="106" width="125" x="6100" y="-35" as="geometry" />
+          <mxGeometry height="80" width="120" x="6088" y="1" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-36" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-178" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-207" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -413,11 +381,8 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-178" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;25&lt;/b&gt; &amp;nbsp; Build &lt;b&gt;df_reindexed&lt;/b&gt;&lt;br&gt;by aligning &lt;b&gt;df&lt;/b&gt;&lt;br&gt;to &lt;b&gt;target_dates&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="180" x="6280" y="71" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-179" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="report source record coverage by variable" vertex="1">
-          <mxGeometry height="80" width="120" x="6309" y="-9" as="geometry" />
-        </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-181" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="DATE becomes the df index and reindexes to the calendar" vertex="1">
-          <mxGeometry height="80" width="120" x="6339" y="-89" as="geometry" />
+          <mxGeometry height="80" width="120" x="6331" y="-9" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-24" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-200" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-139" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -429,7 +394,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-207" parent="1" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;" value="&lt;b&gt;26&lt;/b&gt; &amp;nbsp; Select next&lt;br&gt;&lt;b&gt;var&lt;/b&gt;&lt;br&gt;from &lt;b&gt;target_vars&lt;/b&gt;" vertex="1">
-          <mxGeometry height="88" width="115" x="6465" y="67" as="geometry" />
+          <mxGeometry height="88" width="115" x="6481" y="67" as="geometry" />
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-247" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-208" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="YBhsTPMUBiwthjwb7pRI-210" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -455,9 +420,6 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-211" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;28&lt;/b&gt; &amp;nbsp; Variable absent:&lt;br&gt;leave allocated values&lt;br&gt;&lt;b&gt;NaN&lt;/b&gt; and masks &lt;b&gt;False&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="175" x="6985" y="132" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-212" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="report variables absent from source and variables present but missing obs" vertex="1">
-          <mxGeometry height="91" width="125" x="7010" y="222" as="geometry" />
-        </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-41" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-213" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="YBhsTPMUBiwthjwb7pRI-214" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -469,9 +431,6 @@
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-214" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;30&lt;/b&gt; &amp;nbsp; Create numeric &lt;b&gt;vals&lt;/b&gt;&lt;br&gt;with nonnumeric entries&lt;br&gt;coerced to NaN" vertex="1">
           <mxGeometry height="80" width="170" x="7182" y="-17.5" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-215" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="report unexpected nonumeric entires to nan" vertex="1">
-          <mxGeometry height="80" width="120" x="7207" y="-97.5" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-44" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-216" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-218">
           <mxGeometry relative="1" as="geometry" />
@@ -500,14 +459,8 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-219" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;32&lt;/b&gt; &amp;nbsp; Split &lt;b&gt;attr_col&lt;/b&gt;&lt;br&gt;into &lt;b&gt;attrs&lt;/b&gt;:&lt;br&gt;mflag, qflag, source, time" vertex="1">
           <mxGeometry height="80" width="180" x="7796" y="-97.5" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-220" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;base=19;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="apparently it breaks here and does not initialize qflag?" vertex="1">
-          <mxGeometry height="80" width="120" x="6786" y="-216" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-221" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="note this ignores obs time and sflag" vertex="1">
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-221" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="note: preserves quality flag codes" vertex="1">
           <mxGeometry height="80" width="120" x="7818" y="-177.5" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-222" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="might want to have it not ignore those" vertex="1">
-          <mxGeometry height="80" width="120" x="7860" y="-258" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-52" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-224" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-225" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -521,9 +474,6 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-225" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;34&lt;/b&gt; &amp;nbsp; Set &lt;b&gt;is_trace = mflag == T&lt;/b&gt;&lt;br&gt;then &lt;b&gt;vals[is_trace] = 0&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="170" x="8183" y="-97.5" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-226" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="maybe want to record a count of trace obs occurance" vertex="1">
-          <mxGeometry height="80" width="120" x="8207" y="-257.5" as="geometry" />
-        </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-54" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-227" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-231" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -532,9 +482,6 @@
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-228" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="verify missing/malformed data follows documented quality policy" vertex="1">
           <mxGeometry height="99" width="138" x="8393" y="-197" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-229" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="i think this was suppposed to say&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;div&gt;T-&amp;gt;0 should be 0*&lt;/div&gt;" vertex="1">
-          <mxGeometry height="80" width="120" x="8198" y="-177.5" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-55" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-231" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-232" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -548,9 +495,6 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-232" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;37&lt;/b&gt; &amp;nbsp; Create &lt;b&gt;vals_converted&lt;/b&gt;&lt;br&gt;using &lt;b&gt;var_conv[var]&lt;/b&gt;&lt;br&gt;and cast to float32" vertex="1">
           <mxGeometry height="80" width="180" x="8764" y="-97.5" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-233" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="verify conversion happens once and output looks good" vertex="1">
-          <mxGeometry height="80" width="120" x="8811" y="-257.5" as="geometry" />
-        </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-234" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="this uses unit specific conversion factors defined near start" vertex="1">
           <mxGeometry height="80" width="120" x="8778" y="-178" as="geometry" />
         </mxCell>
@@ -562,12 +506,6 @@
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-236" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="true means flag present" vertex="1">
           <mxGeometry height="80" width="120" x="9266" y="-178" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-237" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="A boolean mask loses the identity of the qflag code. Maybe dont do that" vertex="1">
-          <mxGeometry height="90" width="125" x="9297" y="-268" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-238" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this is where the unititlaized or stale qflag issue could cause more issues" vertex="1">
-          <mxGeometry height="99" width="125" x="9315" y="-367" as="geometry" />
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-245" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-239" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;exitX=1;exitY=0;exitDx=0;exitDy=0;" target="YBhsTPMUBiwthjwb7pRI-240" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -656,7 +594,7 @@
         <mxCell id="WcriJxCStyfXSmQ5elGc-71" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-268" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="review-build-dataset" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-268" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;44&lt;/b&gt; &amp;nbsp; Build &lt;b&gt;data_vars&lt;/b&gt;:&lt;br&gt;11 observation arrays +&lt;br&gt;11 quality arrays;&lt;br&gt;dims = (station, time)" vertex="1">
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-268" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="package 11 obs, 11 bool masks, 44 attribute arrays with (station, time)" vertex="1">
           <mxGeometry height="80" width="190" x="10574" y="-329" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-72" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-269" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-273">
@@ -677,9 +615,6 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-273" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;47&lt;/b&gt; &amp;nbsp; Attach descriptions and units&lt;br&gt;to &lt;b&gt;ds[var].attrs&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="165" x="11272" y="-329" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-274" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="verify units and descriptions and missing val info also fix the DA vars unit to be days" vertex="1">
-          <mxGeometry height="105" width="151" x="11269" y="-434" as="geometry" />
-        </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-74" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-275" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-277" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -694,9 +629,6 @@
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-277" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;49&lt;/b&gt; &amp;nbsp; Create &lt;b&gt;station_df&lt;/b&gt;:&lt;br&gt;&lt;b&gt;ds.to_dataframe()&lt;/b&gt;&lt;br&gt;then &lt;b&gt;.reset_index()&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="190" x="11664" y="-329" as="geometry" />
-        </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-279" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="verify that that station day keys ramin unique and quality mask columns survive the conversions" vertex="1">
-          <mxGeometry height="115" width="146" x="11676" y="-444" as="geometry" />
         </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-76" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-277" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-282" value="Full station_df">
           <mxGeometry relative="1" as="geometry" />
@@ -713,22 +645,8 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-283" parent="1" style="shape=wedgeCallout;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="provide a data dictionary or accompanying metadata record" vertex="1">
           <mxGeometry height="80" width="120" x="12144" y="-449" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-284" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="this loses the index and i am not sure if tha is&amp;nbsp; ok or not" vertex="1">
-          <mxGeometry height="80" width="120" x="12183" y="-529" as="geometry" />
-        </mxCell>
         <mxCell id="WcriJxCStyfXSmQ5elGc-1" parent="1" style="shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;" value="loops" vertex="1">
           <mxGeometry height="80" width="80" x="901" y="-133" as="geometry" />
-        </mxCell>
-        <mxCell id="review-failed-station" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-164" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="YBhsTPMUBiwthjwb7pRI-262" value="Skip failed station; no metadata append">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="5007" y="640" />
-              <mxPoint x="10271" y="640" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="review-drop-invalid" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-174" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;" target="YBhsTPMUBiwthjwb7pRI-176" value="">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="review-missing-variable" edge="1" parent="1" source="YBhsTPMUBiwthjwb7pRI-211" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="YBhsTPMUBiwthjwb7pRI-239" value="Skip this variable">
           <mxGeometry relative="1" as="geometry">
@@ -737,9 +655,6 @@
               <mxPoint x="9527" y="270" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="review-missing-variable-reporting" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=11;" value="Current code skips silently.&lt;br&gt;Reporting remains a proposed addition." vertex="1">
-          <mxGeometry height="75" width="210" x="7195" y="152" as="geometry" />
         </mxCell>
         <mxCell id="review-store-observations" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fontSize=11;" value="&lt;b&gt;38&lt;/b&gt; &amp;nbsp; Store one station row:&lt;br&gt;&lt;b&gt;data_matrices[var][i, :]&lt;/b&gt;&lt;br&gt;= &lt;b&gt;vals_converted&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="220" x="8990" y="-97.5" as="geometry" />
@@ -761,6 +676,24 @@
         </mxCell>
         <mxCell id="review-review-note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=11;" value="Reviewed copy: corrected connections and variable tracking. Original yellow/white notes retained verbatim. Blue notes are clarifications. Dashed diagnostic arrows do not replace the main dataframe. CSV-only export is the agreed plan; notebook code still needs that edit." vertex="1">
           <mxGeometry height="145" width="420" x="1000" y="-350" as="geometry" />
+        </mxCell>
+        <mxCell id="-f6CNqkNCMGj1yxwzB-q-1" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="note: trace 0s reported via mflags" vertex="1">
+          <mxGeometry height="80" width="120" x="8203" y="-177.5" as="geometry" />
+        </mxCell>
+        <mxCell id="-f6CNqkNCMGj1yxwzB-q-5" parent="1" style="shape=offPageConnector;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="&#xa;&lt;b&gt;20&lt;/b&gt; &amp;nbsp;raise an error and stop&#xa;&#xa;" vertex="1">
+          <mxGeometry height="80" width="80" x="4967" y="424" as="geometry" />
+        </mxCell>
+        <mxCell id="-f6CNqkNCMGj1yxwzB-q-9" edge="1" parent="1" source="-f6CNqkNCMGj1yxwzB-q-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-176" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-f6CNqkNCMGj1yxwzB-q-7" parent="1" style="shape=offPageConnector;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;size=0.5833328247070313;" value="&lt;br&gt;&lt;b&gt;23&lt;/b&gt; checkpoint&amp;nbsp; stop for date inspection&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="100" x="6108" y="117" as="geometry" />
+        </mxCell>
+        <mxCell id="-f6CNqkNCMGj1yxwzB-q-12" edge="1" parent="1" source="-f6CNqkNCMGj1yxwzB-q-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="YBhsTPMUBiwthjwb7pRI-178">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-f6CNqkNCMGj1yxwzB-q-10" parent="1" style="shape=offPageConnector;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="24 checkpoint:&lt;div&gt;stop if contradictory dates&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="6108" y="-136" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
