@@ -31,7 +31,7 @@
         <mxCell id="YBhsTPMUBiwthjwb7pRI-33" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;b&gt;3&lt;/b&gt; &amp;nbsp; inits a list of &lt;b&gt;first_order_stations&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="120" x="1570" y="198.5" as="geometry" />
         </mxCell>
-        <mxCell id="YBhsTPMUBiwthjwb7pRI-51" parent="1" style="shape=wedgeCallout;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="Chanhassen and little fork need to be spliced in. I think step one of that is making a list of donor_stations" vertex="1">
+        <mxCell id="YBhsTPMUBiwthjwb7pRI-51" parent="1" style="shape=wedgeCallout;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" value="Chanhassen and little fork need to be spliced in." vertex="1">
           <mxGeometry height="80" width="124" x="1639" y="81" as="geometry" />
         </mxCell>
         <mxCell id="YBhsTPMUBiwthjwb7pRI-49" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;note: assumes execution from &#39;scripts&#39;&lt;/span&gt;" vertex="1">
