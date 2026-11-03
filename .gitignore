@@ -6,3 +6,5 @@ __pycache__/
 station_data/
 indicies_data/first_pass/enso_historical_indicies.csv
 outputs/
+indicies_data/phase_one/*_CPC_v6.html
+indicies_data/phase_one/enso_historical_indicies.csv
